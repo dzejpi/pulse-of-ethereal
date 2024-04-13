@@ -2,7 +2,7 @@ extends Node
 
 
 onready var game_window = $"../../GameWindow"
-onready var enemy_spawner = $"../../GameWindow/EnemySpawner"
+onready var enemy_spawner_ship = $"../../GameWindow/EnemySpawner/enemy_spawner_ship"
 onready var powerup_spawner = $"../../GameWindow/PowerUpSpawner"
 
 
@@ -21,15 +21,15 @@ func change_spaceship_speed(new_speed):
 
 
 func ready_enemy_spawner():
-	pass
+	enemy_spawner_ship.is_hidden = false
 	
 	
 func unready_enemy_spawner():
-	pass
+	enemy_spawner_ship.is_hidden = true
 
 
 func spawn_enemy(enemy_number, spawn_position):
-	pass
+	enemy_spawner_ship.spawn_enemy(enemy_number, spawn_position)
 
 
 # Lord forgive me for what I'm about to do
@@ -52,7 +52,7 @@ func trigger_event(event_number):
 		7:
 			pass
 		8:
-			pass
+			ready_enemy_spawner()
 		9:
 			pass
 		10:
@@ -60,39 +60,39 @@ func trigger_event(event_number):
 		11:
 			pass
 		12:
-			pass
+			enemy_spawner_ship.spawn_enemy(1, 1)
 		13:
 			pass
 		14:
-			pass
+			enemy_spawner_ship.spawn_enemy(1, 2)
 		15:
 			pass
 		16:
-			pass
+			enemy_spawner_ship.spawn_enemy(1, 3)
 		17:
 			pass
 		18:
-			pass
+			enemy_spawner_ship.spawn_enemy(2, 1)
 		19:
 			pass
 		20:
-			pass
+			enemy_spawner_ship.spawn_enemy(2, 2)
 		21:
 			pass
 		22:
-			pass
+			enemy_spawner_ship.spawn_enemy(2, 2)
 		23:
 			pass
 		24:
-			pass
+			enemy_spawner_ship.spawn_enemy(3, 1)
 		25:
 			pass
 		26:
-			pass
+			enemy_spawner_ship.spawn_enemy(3, 2)
 		27:
 			pass
 		28:
-			pass
+			enemy_spawner_ship.spawn_enemy(3, 3)
 		29:
 			pass
 		30:

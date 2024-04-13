@@ -7,11 +7,11 @@
 [ext_resource path="res://scenes/player_ui/PauseScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/player_ui/GameOverScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/player/PlayerScript.gd" type="Script" id=7]
-[ext_resource path="res://scenes/enemies/EnemyRotating.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/game_scenes/GameSpawnNode.gd" type="Script" id=9]
 [ext_resource path="res://3d/export/player_spaceship.gltf" type="PackedScene" id=10]
 [ext_resource path="res://scripts/game_scenes/GameActionNode.gd" type="Script" id=11]
 [ext_resource path="res://assets/music/music_empty_track.mp3" type="AudioStream" id=12]
+[ext_resource path="res://scenes/enemies/EnemySpawnerShip.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -97,12 +97,12 @@ script = ExtResource( 7 )
 
 [node name="EnemySpawner" type="Spatial" parent="GameWindow"]
 
+[node name="enemy_spawner_ship" parent="GameWindow/EnemySpawner" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.13687e-13, 6, 24 )
+
 [node name="PowerUpSpawner" type="Spatial" parent="GameWindow"]
 
 [node name="Enemies" type="Spatial" parent="GameWindow"]
-
-[node name="RotatingEnemy" parent="GameWindow/Enemies" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -23 )
 
 [node name="PlayerCamera" type="Camera" parent="GameWindow"]
 fov = 90.0

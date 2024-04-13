@@ -12,7 +12,7 @@ onready var bullets = $"../../../Bullets"
 
 
 func _ready():
-	shoot_towards_player()
+	pass
 
 
 func _process(delta):
