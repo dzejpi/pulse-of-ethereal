@@ -52,6 +52,9 @@ var reticle_left_limit = -68.0
 var reticle_right_limit = reticle_left_limit * -1
 
 var rotation_speed = 40
+var current_rotation = 0
+var target_rotation = 0
+var is_game_window_rotating = false
 
 var screen_width = 1280.0
 var screen_height = 720.0
@@ -89,8 +92,11 @@ func _process(delta):
 	# Only check if the game is paused
 	if is_paused:
 		check_pause_update()
+	
+	# Adjust rotation automatically
+	if is_game_window_rotating:
+		process_game_window_rotation(delta)
 
-	print("Current rotation in degrees: " + str(rad2deg(get_rotation().z)))
 
 func _physics_process(delta):
 	if !pause_scene.is_game_paused && !is_game_over && !is_game_won:
@@ -111,10 +117,10 @@ func _physics_process(delta):
 				player_ship.transform.origin.x += 0.1
 		
 		if Input.is_action_pressed("rotate_down"):
-			self.rotate_z(deg2rad(rotation_speed * delta))
+			rotate_game_window(45.0)
 			
 		if Input.is_action_pressed("rotate_up"):
-			self.rotate_z(deg2rad(-rotation_speed * delta))
+			rotate_game_window(-45.0)
 
 
 func _input(event):
@@ -236,8 +242,25 @@ func process_collisions():
 			print("Player is looking at: nothing.")
 
 
-func rotate_game_window(target_rotation):
-	var current_rotation = self.rotation_degrees.z
+func rotate_game_window(new_target_rotation):
+	target_rotation = new_target_rotation
+	is_game_window_rotating = true
+
+
+func process_game_window_rotation(delta):
+	current_rotation = rad2deg(get_rotation().x)
+	
+	# Rotating up
+	if current_rotation < target_rotation:
+		self.rotate_z(deg2rad(rotation_speed * delta))
+	# Rotating down
+	elif current_rotation > target_rotation:
+		self.rotate_z(deg2rad(-rotation_speed * delta))
+	
+	# Adjust if close enough
+	if abs(current_rotation - target_rotation) < 0.5:
+		var new_rotation = Transform().rotated(Vector3(1, 0, 0), deg2rad(target_rotation))
+		is_game_window_rotating = false
 
 
 func process_ship_movement(delta):
