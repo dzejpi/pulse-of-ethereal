@@ -30,7 +30,7 @@ func _ready():
 
 
 func _process(delta):
-	print("Current Z position is:" + str(self.transform.origin.z))
+	#print("Current Z position is:" + str(self.transform.origin.z))
 	if is_hidden:
 		if self.transform.origin.z < hidden_position_z:
 			self.transform.origin.z += 1 * spawn_ship_speed

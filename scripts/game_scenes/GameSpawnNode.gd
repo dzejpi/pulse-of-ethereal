@@ -4,6 +4,7 @@ extends Node
 onready var game_window = $"../../GameWindow"
 onready var enemy_spawner_ship = $"../../GameWindow/EnemySpawner/enemy_spawner_ship"
 onready var powerup_spawner = $"../../GameWindow/PowerUpSpawner"
+onready var modular_swallower = $"../../GameWindow/EnemyBosses/ModularSwallower"
 
 
 func _ready():
@@ -32,6 +33,10 @@ func spawn_enemy(enemy_number, spawn_position):
 	enemy_spawner_ship.spawn_enemy(enemy_number, spawn_position)
 
 
+func swallower_spawn_enemy(enemy_number, spawn_position):
+	modular_swallower.spawn_enemy(enemy_number, spawn_position)
+
+
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
 	match(event_number):
@@ -44,11 +49,11 @@ func trigger_event(event_number):
 		3:
 			pass
 		4:
-			pass
+			swallower_spawn_enemy(2, 1)
 		5:
 			pass
 		6:
-			pass
+			swallower_spawn_enemy(2, 3)
 		7:
 			pass
 		8:

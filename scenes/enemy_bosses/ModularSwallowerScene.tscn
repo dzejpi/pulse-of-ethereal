@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://3d/export/enemy_swallower_e.gltf" type="PackedScene" id=1]
 [ext_resource path="res://3d/export/enemy_swallower_b.gltf" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://3d/export/enemy_swallower_c.gltf" type="PackedScene" id=4]
 [ext_resource path="res://3d/export/enemy_swallower_a.gltf" type="PackedScene" id=5]
 [ext_resource path="res://scripts/enemy_bosses/SwallowerScene.gd" type="Script" id=6]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2, 1, 12 )
 
 [node name="ModularSwallower" type="Spatial"]
 script = ExtResource( 6 )
@@ -38,3 +41,28 @@ transform = Transform( 1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 4.16026,
 
 [node name="enemy_swallower_a" parent="NodeE/NodeD/NodeC/NodeB/NodeA" instance=ExtResource( 5 )]
 transform = Transform( -1, 2.6054e-15, -8.74228e-08, -2.6054e-15, 1, 5.96046e-08, 8.74227e-08, 5.96046e-08, -1, 0, 2.65685, -1 )
+
+[node name="NodeA2" type="Spatial" parent="NodeE/NodeD/NodeC/NodeB/NodeA"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
+
+[node name="enemy_swallower_a" parent="NodeE/NodeD/NodeC/NodeB/NodeA/NodeA2" instance=ExtResource( 5 )]
+transform = Transform( -1, 2.6054e-15, -8.74228e-08, -2.6054e-15, 1, 5.96046e-08, 8.74227e-08, 5.96046e-08, -1, 0, 2.65685, -1 )
+
+[node name="NodeA3" type="Spatial" parent="NodeE/NodeD/NodeC/NodeB/NodeA"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0 )
+
+[node name="enemy_swallower_a" parent="NodeE/NodeD/NodeC/NodeB/NodeA/NodeA3" instance=ExtResource( 5 )]
+transform = Transform( -1, 2.6054e-15, -8.74228e-08, -2.6054e-15, 1, 5.96046e-08, 8.74227e-08, 5.96046e-08, -1, 0, 2.65685, -1 )
+
+[node name="NodeA4" type="Spatial" parent="NodeE/NodeD/NodeC/NodeB/NodeA"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.99999, -4.76837e-07 )
+
+[node name="enemy_swallower_a" parent="NodeE/NodeD/NodeC/NodeB/NodeA/NodeA4" instance=ExtResource( 5 )]
+transform = Transform( -1, 2.6054e-15, -8.74228e-08, -2.6054e-15, 1, 5.96046e-08, 8.74227e-08, 5.96046e-08, -1, 0, 2.65685, -1 )
+
+[node name="EnemyBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="EnemyBody"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 9.50031 )
+shape = SubResource( 1 )
