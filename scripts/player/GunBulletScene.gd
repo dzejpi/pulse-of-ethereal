@@ -2,6 +2,7 @@ extends Spatial
 
 
 onready var ray_cast = $BulletCollisionBody/RayCast
+var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
 
 
 var speed = 96
@@ -22,6 +23,13 @@ func _process(delta):
 		if collision_object == "EnemyBody":
 			print("Enemy body shot")
 			ray_cast.get_collider().get_parent().receive_damage(5.0)
+			
+			var explosion = explosion_scene.instance()
+			self.get_parent().add_child(explosion)
+			
+			explosion.global_transform.origin = self.global_transform.origin
+			explosion.adjust_size(0.25)
+			
 			queue_free()
 
 	# Self destruct 
