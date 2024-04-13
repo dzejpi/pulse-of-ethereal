@@ -145,6 +145,7 @@ transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 1
 
 [node name="Reticle" type="Spatial" parent="GameWindow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64 )
+visible = false
 
 [node name="CSGTorus" type="CSGTorus" parent="GameWindow/Reticle"]
 transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0 )
