@@ -107,6 +107,8 @@ func _process(delta):
 	# Keep updating position
 	global_var.current_global_player_position = player_ship.global_transform.origin
 	
+	global_var.current_score += 5 * delta
+	
 	update_labels()
 	
 	# Only check if the game is paused
@@ -304,7 +306,7 @@ func process_machine_gun_cooldown(delta):
 
 
 func display_current_score():
-	current_score_label.text = str(global_var.current_score)
+	current_score_label.text = str(int(global_var.current_score))
 
 
 func receive_damage(damage):
