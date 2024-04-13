@@ -15,7 +15,7 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 0 )
 [node name="enemy_suicide_drone" parent="Mesh" instance=ExtResource( 1 )]
 
 [node name="EnemyBody" type="StaticBody" parent="."]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+transform = Transform( 4, 0, 0, 0, 1.7, 0, 0, 0, 5, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="EnemyBody"]
 shape = SubResource( 1 )
