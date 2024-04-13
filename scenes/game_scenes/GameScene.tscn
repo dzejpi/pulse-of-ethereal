@@ -137,7 +137,8 @@ visible = false
 [node name="Environment" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="Environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -4, 0 )
 width = 64.0
+depth = 32.0
 
 [node name="TransitionOverlay" parent="." instance=ExtResource( 2 )]
