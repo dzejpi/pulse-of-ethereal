@@ -187,16 +187,16 @@ func shoot_machine_gun():
 		
 		var bullet = bullet_scene.instance()
 		bullets.add_child(bullet)
-		bullet.global_transform.origin.x = player_ship.global_transform.origin.x
-		bullet.global_transform.origin.y = player_ship.global_transform.origin.y
-		bullet.global_transform.origin.z = player_ship.global_transform.origin.z + 1
+		bullet.global_transform.origin.x = player_ship.global_transform.origin.x - 1
+		bullet.global_transform.origin.y = player_ship.global_transform.origin.y + 0.2
+		bullet.global_transform.origin.z = player_ship.global_transform.origin.z + 0.6
 		bullet.look_at(reticle.global_transform.origin, Vector3.UP)
 		
 		var bullet_two = bullet_scene.instance()
 		bullets.add_child(bullet_two)
-		bullet_two.global_transform.origin.x = player_ship.global_transform.origin.x + 1
-		bullet_two.global_transform.origin.y = player_ship.global_transform.origin.y
-		bullet_two.global_transform.origin.z = player_ship.global_transform.origin.z - 1
+		bullet_two.global_transform.origin.x = player_ship.global_transform.origin.x - 1
+		bullet_two.global_transform.origin.y = player_ship.global_transform.origin.y + 0.2
+		bullet_two.global_transform.origin.z = player_ship.global_transform.origin.z - 0.6
 		bullet_two.look_at(reticle.global_transform.origin, Vector3.UP)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/game_scenes/GameSceneOne.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/player/PlayerScript.gd" type="Script" id=7]
 [ext_resource path="res://scenes/enemies/ShootingEnemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/enemies/EnemySuicideDrone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://3d/export/player_spaceship.gltf" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -121,9 +122,11 @@ shape = SubResource( 8 )
 
 [node name="CSGSphere" type="CSGSphere" parent="GameWindow/PlayerShip"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+visible = false
 
 [node name="CSGBox" type="CSGBox" parent="GameWindow/PlayerShip"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -0.5 )
+visible = false
 height = 0.25
 
 [node name="PlayerStaticBody" type="StaticBody" parent="GameWindow/PlayerShip"]
@@ -131,6 +134,9 @@ transform = Transform( 4, 0, 0, 0, 2, 0, 0, 0, 1, -1.21898e-07, 0, -2.7887 )
 
 [node name="CollisionShape" type="CollisionShape" parent="GameWindow/PlayerShip/PlayerStaticBody"]
 shape = SubResource( 9 )
+
+[node name="player_spaceship" parent="GameWindow/PlayerShip" instance=ExtResource( 10 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 1.07286e-07, 0, 3.60012e-05 )
 
 [node name="Reticle" type="Spatial" parent="GameWindow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64 )
