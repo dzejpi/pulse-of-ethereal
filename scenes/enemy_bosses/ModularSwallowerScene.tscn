@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://3d/export/enemy_swallower_e.gltf" type="PackedScene" id=1]
 [ext_resource path="res://3d/export/enemy_swallower_b.gltf" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://3d/export/enemy_swallower_c.gltf" type="PackedScene" id=4]
 [ext_resource path="res://3d/export/enemy_swallower_a.gltf" type="PackedScene" id=5]
 [ext_resource path="res://scripts/enemy_bosses/SwallowerScene.gd" type="Script" id=6]
+[ext_resource path="res://themes/main_text_theme.tres" type="Theme" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 1, 12 )
@@ -66,3 +67,12 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -
 [node name="CollisionShape" type="CollisionShape" parent="EnemyBody"]
 transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 9.50031 )
 shape = SubResource( 1 )
+
+[node name="SwallowerHealthLabel" type="Label" parent="."]
+margin_top = 64.0
+margin_right = 1280.0
+margin_bottom = 128.0
+theme = ExtResource( 7 )
+text = "0"
+align = 1
+valign = 1

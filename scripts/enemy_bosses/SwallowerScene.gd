@@ -2,6 +2,7 @@ extends Spatial
 
 
 onready var enemy_swallower_e = $NodeE/enemy_swallower_e
+onready var swallower_health_label = $SwallowerHealthLabel
 onready var enemies = $"../../Enemies"
 
 
@@ -12,7 +13,7 @@ var enemy_three = preload("res://scenes/enemies/EnemyRotating.tscn")
 var enemy_health = 1000
 var enemy_score = 10000
 
-var is_hidden = false
+var is_hidden = true
 
 var shown_y = 0
 var hidden_y = -120
@@ -20,11 +21,14 @@ var hidden_y = -120
 
 func _process(delta):
 	look_at(global_var.current_global_player_position, Vector3.UP)
+	swallower_health_label.text = "Swallower's health: " + str(enemy_health)
 	
 	if is_hidden:
+		swallower_health_label.hide()
 		if self.transform.origin.y > hidden_y:
 			self.transform.origin.y -= 25 * delta
 	else:
+		swallower_health_label.show()
 		if self.transform.origin.y < shown_y:
 			self.transform.origin.y += 25 * delta
 
