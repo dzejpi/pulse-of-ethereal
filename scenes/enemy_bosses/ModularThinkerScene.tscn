@@ -10,7 +10,7 @@
 [ext_resource path="res://3d/export/enemy_thinker_neck.gltf" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 2, 1, 12 )
+extents = Vector3( 0.2, 0.2, 0.2 )
 
 [node name="ModularThinker" type="Spatial"]
 script = ExtResource( 1 )
@@ -25,13 +25,13 @@ align = 1
 valign = 1
 
 [node name="EnemyBody" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -17 )
+transform = Transform( 6, 0, 0, 0, 28, 0, 0, 0, 3, 0, -3, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="EnemyBody"]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 9.50031 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
 
 [node name="Body" type="Spatial" parent="Body"]
 
@@ -42,10 +42,13 @@ shape = SubResource( 1 )
 [node name="enemy_thinker_eye" parent="Body/Eye" instance=ExtResource( 4 )]
 
 [node name="LeftHand" type="Spatial" parent="Body"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.5, 0 )
 
 [node name="enemy_thinker_left_hand" parent="Body/LeftHand" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+
+[node name="LeftHandSpawn" type="Spatial" parent="Body/LeftHand"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2.42045, 0 )
 
 [node name="Legs" type="Spatial" parent="Body"]
 
@@ -56,7 +59,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
 [node name="enemy_thinker_neck" parent="Body/Neck" instance=ExtResource( 8 )]
 
 [node name="RightHand" type="Spatial" parent="Body"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.5, 0 )
 
 [node name="enemy_thinker_right_hand" parent="Body/RightHand" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+
+[node name="RightHandSpawn" type="Spatial" parent="Body/RightHand"]

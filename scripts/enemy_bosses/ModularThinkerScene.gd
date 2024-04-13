@@ -3,6 +3,8 @@ extends Spatial
 
 onready var thinker_health_label = $ThinkerHealthLabel
 onready var enemies = $"../../Enemies"
+onready var left_hand_spawn = $Body/LeftHand/LeftHandSpawn
+onready var right_hand_spawn = $Body/RightHand/RightHandSpawn
 
 
 var enemy_one = preload("res://scenes/enemies/ShootingEnemy.tscn")
@@ -50,50 +52,48 @@ func spawn_enemy(enemy_number, spawn_position):
 				
 				match(spawn_position):
 					1:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z + 20
+						new_enemy.global_transform.origin.x = left_hand_spawn.global_transform.origin.x - 8
+						new_enemy.global_transform.origin.y = left_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = left_hand_spawn.global_transform.origin.z - 3
 					2:
 						new_enemy.global_transform.origin.x = self.global_transform.origin.x
 						new_enemy.global_transform.origin.y = self.global_transform.origin.y
 						new_enemy.global_transform.origin.z = self.global_transform.origin.z
 					3:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z - 20
+						new_enemy.global_transform.origin.x = right_hand_spawn.global_transform.origin.x - 12
+						new_enemy.global_transform.origin.y = right_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = right_hand_spawn.global_transform.origin.z - 3
 			2:
 				var new_enemy = enemy_two.instance()
 				enemies.add_child(new_enemy)
-				new_enemy.turn_speed = 240
-				new_enemy.course_adjustment_base = 0.1
 				
 				match(spawn_position):
 					1:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z + 20
+						new_enemy.global_transform.origin.x = left_hand_spawn.global_transform.origin.x - 8
+						new_enemy.global_transform.origin.y = left_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = left_hand_spawn.global_transform.origin.z - 3
 					2:
 						new_enemy.global_transform.origin.x = self.global_transform.origin.x
 						new_enemy.global_transform.origin.y = self.global_transform.origin.y
 						new_enemy.global_transform.origin.z = self.global_transform.origin.z
 					3:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z - 20
+						new_enemy.global_transform.origin.x = right_hand_spawn.global_transform.origin.x - 12
+						new_enemy.global_transform.origin.y = right_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = right_hand_spawn.global_transform.origin.z - 3
 			3:
 				var new_enemy = enemy_three.instance()
 				enemies.add_child(new_enemy)
 				
 				match(spawn_position):
 					1:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z + 20
+						new_enemy.global_transform.origin.x = left_hand_spawn.global_transform.origin.x - 8
+						new_enemy.global_transform.origin.y = left_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = left_hand_spawn.global_transform.origin.z - 3
 					2:
 						new_enemy.global_transform.origin.x = self.global_transform.origin.x
 						new_enemy.global_transform.origin.y = self.global_transform.origin.y
 						new_enemy.global_transform.origin.z = self.global_transform.origin.z
 					3:
-						new_enemy.global_transform.origin.x = self.global_transform.origin.x
-						new_enemy.global_transform.origin.y = self.global_transform.origin.y
-						new_enemy.global_transform.origin.z = self.global_transform.origin.z - 20
+						new_enemy.global_transform.origin.x = right_hand_spawn.global_transform.origin.x - 12
+						new_enemy.global_transform.origin.y = right_hand_spawn.global_transform.origin.y + 1
+						new_enemy.global_transform.origin.z = right_hand_spawn.global_transform.origin.z - 3

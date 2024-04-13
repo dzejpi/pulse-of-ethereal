@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/game_scenes/GameSceneOne.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/music/music_empty_track.mp3" type="AudioStream" id=12]
 [ext_resource path="res://scenes/enemies/EnemySpawnerShip.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/enemy_bosses/ModularSwallowerScene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/enemy_bosses/ModularThinkerScene.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -101,6 +102,9 @@ script = ExtResource( 7 )
 
 [node name="ModularSwallower" parent="GameWindow/EnemyBosses" instance=ExtResource( 14 )]
 transform = Transform( 3, 0, 1.04907e-06, 0, 3, 0, -1.04907e-06, 0, 3, 0, -120, -100 )
+
+[node name="ModularThinker" parent="GameWindow/EnemyBosses" instance=ExtResource( 15 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -120, -29 )
 
 [node name="EnemySpawner" type="Spatial" parent="GameWindow"]
 

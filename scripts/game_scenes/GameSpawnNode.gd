@@ -5,6 +5,7 @@ onready var game_window = $"../../GameWindow"
 onready var enemy_spawner_ship = $"../../GameWindow/EnemySpawner/enemy_spawner_ship"
 onready var powerup_spawner = $"../../GameWindow/PowerUpSpawner"
 onready var modular_swallower = $"../../GameWindow/EnemyBosses/ModularSwallower"
+onready var modular_thinker = $"../../GameWindow/EnemyBosses/ModularThinker"
 
 
 func _ready():
@@ -39,6 +40,14 @@ func swallower_spawn_enemy(enemy_number, spawn_position):
 
 func summon_swallower():
 	modular_swallower.is_hidden = false
+	
+
+func thinker_spawn_enemy(enemy_number, spawn_position):
+	modular_thinker.spawn_enemy(enemy_number, spawn_position)
+
+
+func summon_thinker():
+	modular_thinker.is_hidden = false
 
 
 # Lord forgive me for what I'm about to do
