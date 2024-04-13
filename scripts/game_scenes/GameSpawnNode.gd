@@ -12,6 +12,10 @@ func _ready():
 		pass
 
 
+func change_rotation(target_rotation):
+	game_window.rotate_game_window(target_rotation)
+
+
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
 	match(event_number):
