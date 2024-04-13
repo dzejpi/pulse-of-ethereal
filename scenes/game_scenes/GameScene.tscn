@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/game_scenes/GameSceneOne.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -72,6 +72,9 @@ tracks/1/keys = {
 radius = 0.4
 height = 0.002
 
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.75, 0.125, 1 )
+
 [node name="GameScene" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -112,6 +115,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 [node name="CSGBox" type="CSGBox" parent="GameWindow/PlayerShip"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -0.5 )
 height = 0.25
+
+[node name="PlayerStaticBody" type="StaticBody" parent="GameWindow/PlayerShip"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GameWindow/PlayerShip/PlayerStaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37164e-08, 0, -1.00011 )
+shape = SubResource( 9 )
 
 [node name="Reticle" type="Spatial" parent="GameWindow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64 )

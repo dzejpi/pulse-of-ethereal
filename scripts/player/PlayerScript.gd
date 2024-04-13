@@ -291,7 +291,7 @@ func display_current_score():
 
 func receive_damage(damage):
 	player_health -= damage
-	if player_health < 0:
+	if player_health <= 0:
 		is_game_over = true
 
 

@@ -18,7 +18,7 @@ func _process(delta):
 
 func receive_damage(damage_received):
 	enemy_health -= damage_received
-	if enemy_health < 0:
+	if enemy_health <= 0:
 		global_var.current_score += enemy_score
 		queue_free()
 

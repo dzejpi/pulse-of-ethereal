@@ -20,8 +20,9 @@ func _process(delta):
 	if ray_cast.is_colliding():
 		var collision_object = ray_cast.get_collider().name
 		if collision_object == "EnemyBody":
-			print("I detected enemy body")
+			print("Enemy body shot")
 			ray_cast.get_collider().get_parent().receive_damage(5.0)
+			queue_free()
 
 	# Self destruct 
 	if destruction_countdown > 0:
