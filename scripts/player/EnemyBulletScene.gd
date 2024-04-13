@@ -6,13 +6,19 @@ onready var ray_cast = $BulletCollisionBody/RayCast
 
 var speed = 20
 var destruction_countdown = 5
+var is_adjusted = false
 
 
 func _ready():
-	self.look_at(global_var.current_global_player_position, Vector3.UP)
+	self.look_at(global_var.current_global_player_position, Vector3.DOWN)
 
 
 func _process(delta):
+	# Bullets need extra adjustment for some reason
+	if !is_adjusted:
+		self.look_at(global_var.current_global_player_position, Vector3.DOWN)
+		is_adjusted = true
+	
 	# Move forward
 	var forward = -Transform().basis.z.normalized()
 	translate(forward * speed * delta)
