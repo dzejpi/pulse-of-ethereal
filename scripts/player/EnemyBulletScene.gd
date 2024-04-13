@@ -4,7 +4,7 @@ extends Spatial
 onready var ray_cast = $BulletCollisionBody/RayCast
 
 
-var speed = 10
+var speed = 20
 var destruction_countdown = 5
 
 

@@ -3,7 +3,9 @@ extends Spatial
 
 var enemy_health = 25.0
 var enemy_score = 10
-var enemy_speed = 10
+var enemy_speed = 2
+var shooting_countdown_base = 2
+var shooting_countdown = shooting_countdown_base
 
 var enemy_bullet = preload("res://scenes/player/EnemyBulletScene.tscn")
 
@@ -14,6 +16,12 @@ func _ready():
 
 func _process(delta):
 	process_enemy_movement(delta)
+	
+	if shooting_countdown > 0:
+		shooting_countdown -= 4 * delta
+	else:
+		shooting_countdown = shooting_countdown_base
+		shoot_towards_player()
 
 
 func receive_damage(damage_received):
