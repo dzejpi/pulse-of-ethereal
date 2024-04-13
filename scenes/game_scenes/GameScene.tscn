@@ -94,7 +94,7 @@ script = ExtResource( 7 )
 [node name="Enemies" type="Spatial" parent="GameWindow"]
 
 [node name="RotatingEnemy" parent="GameWindow/Enemies" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00536e-06, 0, -23 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -23 )
 
 [node name="PlayerCamera" type="Camera" parent="GameWindow"]
 fov = 90.0

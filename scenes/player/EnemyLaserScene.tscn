@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://3d/export/projectile_laser.gltf" type="PackedScene" id=1]
+[ext_resource path="res://scripts/player/EnemyLaserScene.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.1
 height = 1.17308
 
 [node name="LaserScene" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="Mesh" type="Spatial" parent="."]
 
@@ -20,6 +22,7 @@ transform = Transform( -1, 0, 5.43585e-06, 0, 1, 0, -1.50996e-07, 0, -36, 0, 0, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71745e-06, 0, -0.502417 )
 shape = SubResource( 1 )
 
-[node name="RayCast" type="RayCast" parent="BulletCollisionBody"]
-transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 1.19209e-07 )
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 enabled = true
+cast_to = Vector3( 0, -50, 0 )

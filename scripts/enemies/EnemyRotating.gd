@@ -55,32 +55,32 @@ func spawn_lasers():
 	var laser_one = laser_scene.instance()
 	self.add_child(laser_one)
 	
-	laser_one.transform.origin.x = self.transform.origin.x
-	laser_one.transform.origin.x = self.transform.origin.x
-	laser_one.transform.origin.x = self.transform.origin.x
+	laser_one.transform.origin.x = 0
+	laser_one.transform.origin.y = 0
+	laser_one.transform.origin.z = 0
 	
 	var laser_two = laser_scene.instance()
 	self.add_child(laser_two)
 	
-	laser_two.transform.origin.x = self.transform.origin.x
-	laser_two.transform.origin.x = self.transform.origin.x
-	laser_two.transform.origin.x = self.transform.origin.x
+	laser_two.transform.origin.x = 0
+	laser_two.transform.origin.y = 0
+	laser_two.transform.origin.z = 0
 	laser_two.rotate_y(deg2rad(-90.0))
 	
 	var laser_three = laser_scene.instance()
 	self.add_child(laser_three)
 	
-	laser_three.transform.origin.x = self.transform.origin.x
-	laser_three.transform.origin.x = self.transform.origin.x
-	laser_three.transform.origin.x = self.transform.origin.x
+	laser_three.transform.origin.x = 0
+	laser_three.transform.origin.y = 0
+	laser_three.transform.origin.z = 0
 	laser_three.rotate_y(deg2rad(-180.0))
 	
 	var laser_four = laser_scene.instance()
 	self.add_child(laser_four)
 	
-	laser_four.transform.origin.x = self.transform.origin.x
-	laser_four.transform.origin.x = self.transform.origin.x
-	laser_four.transform.origin.x = self.transform.origin.x
+	laser_four.transform.origin.x = 0
+	laser_four.transform.origin.y = 0
+	laser_four.transform.origin.z = 0
 	laser_four.rotate_y(deg2rad(90.0))
 	
 	
