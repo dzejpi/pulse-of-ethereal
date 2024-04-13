@@ -1,6 +1,9 @@
 extends Spatial
 
 
+onready var ray_cast = $RayCast
+
+
 var enemy_health = 10.0
 var enemy_score = 10
 var enemy_speed = -16
@@ -19,6 +22,13 @@ func _ready():
 func _process(delta):
 	process_enemy_movement(delta)
 	correct_course(delta)
+	
+	if ray_cast.is_colliding():
+		var collision_object = ray_cast.get_collider().name
+		if collision_object == "PlayerStaticBody":
+			print("Player's body crashed into")
+			ray_cast.get_collider().get_parent().get_parent().receive_damage(10.0)
+			queue_free()
 	
 	if self.transform.origin.z > 0:
 		global_var.current_score += (enemy_score / 2)
