@@ -4,6 +4,8 @@ extends Spatial
 onready var ray_cast = $RayCast
 
 
+var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
+
 var enemy_health = 10.0
 var enemy_score = 10
 var enemy_speed = -16
@@ -28,6 +30,13 @@ func _process(delta):
 		if collision_object == "PlayerStaticBody":
 			print("Player's body crashed into")
 			ray_cast.get_collider().get_parent().get_parent().receive_damage(10.0)
+			
+			var explosion = explosion_scene.instance()
+			self.get_parent().add_child(explosion)
+			
+			explosion.global_transform.origin = self.global_transform.origin
+			explosion.adjust_size(0.5)
+			
 			queue_free()
 	
 	if self.transform.origin.z > 0:

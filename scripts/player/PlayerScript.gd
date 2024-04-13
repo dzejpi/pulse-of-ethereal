@@ -24,6 +24,8 @@ onready var player_ship = $PlayerShip
 onready var bullets = $"../Bullets"
 var bullet_scene = preload("res://scenes/player/GunBulletScene.tscn")
 
+var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
+
 
 # UI
 onready var player_ui = $UI/PlayerUI
@@ -110,7 +112,11 @@ func _process(delta):
 	# Keep updating position
 	global_var.current_global_player_position = player_ship.global_transform.origin
 	
-	global_var.current_score += 5 * delta
+	if !is_game_over && !is_game_won:
+		global_var.current_score += 5 * delta
+		if global_var.highest_score <= global_var.current_score:
+			global_var.highest_score = global_var.current_score
+		
 	
 	update_labels()
 	
@@ -248,12 +254,14 @@ func check_game_end():
 	# Game is over in both cases - when player loses or wins
 	if is_game_over:
 		game_over_scene.show()
+		game_over_scene.update_scores()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause_scene.is_game_paused = false
 		pause_scene.hide()
 		player_ui.hide()
 	elif is_game_won:
 		game_won_scene.show()
+		game_won_scene.update_scores()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause_scene.is_game_paused = false
 		pause_scene.hide()
@@ -319,7 +327,16 @@ func display_current_score():
 func receive_damage(damage):
 	player_health -= damage
 	if player_health <= 0:
-		is_game_over = true
+		if !is_game_over:
+			var explosion = explosion_scene.instance()
+			self.get_parent().add_child(explosion)
+			
+			explosion.global_transform.origin = self.global_transform.origin
+			explosion.adjust_size(0.5)
+			
+			self.hide()
+			
+			is_game_over = true
 
 
 func gain_health(health_gained):

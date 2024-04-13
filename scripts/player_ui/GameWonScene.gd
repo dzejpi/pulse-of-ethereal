@@ -10,5 +10,5 @@ func _ready():
 
 
 func update_scores():
-	current_score_label.text = "Latest score: " + str(global_var.current_score)
-	highest_score_label.text = "Highest score: " + str(global_var.highest_score)
+	current_score_label.text = "Latest score: " + str(int(global_var.current_score))
+	highest_score_label.text = "Highest score: " + str(int(global_var.highest_score))
