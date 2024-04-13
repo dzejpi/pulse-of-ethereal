@@ -154,6 +154,30 @@ text = "0"
 align = 1
 valign = 1
 
+[node name="ShieldsLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
+margin_left = 16.0
+margin_top = 564.0
+margin_right = 144.0
+margin_bottom = 600.0
+text = "Shields: 1"
+valign = 1
+
+[node name="RocketsLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
+margin_left = 16.0
+margin_top = 616.0
+margin_right = 144.0
+margin_bottom = 652.0
+text = "Rockets: 4"
+valign = 1
+
+[node name="HealthLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
+margin_left = 16.0
+margin_top = 668.0
+margin_right = 144.0
+margin_bottom = 704.0
+text = "Health = 100"
+valign = 1
+
 [node name="Bullets" type="Spatial" parent="."]
 
 [node name="Environment" type="Spatial" parent="."]

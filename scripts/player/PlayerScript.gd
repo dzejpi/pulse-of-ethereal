@@ -13,7 +13,6 @@ onready var pause_scene = $UI/Pause/PauseScene
 onready var game_won_scene = $UI/GameEnd/GameWonScene
 onready var game_over_scene = $UI/GameEnd/GameOverScene
 
-
 onready var player_camera = $PlayerCamera
 
 onready var reticle = $Reticle
@@ -27,6 +26,10 @@ var bullet_scene = preload("res://scenes/player/GunBulletScene.tscn")
 onready var player_ui = $UI/PlayerUI
 onready var tooltip = $UI/PlayerUI/Tooltip
 onready var current_score_label = $UI/PlayerUI/CurrentScoreLabel
+
+onready var health_left_label = $UI/PlayerUI/HealthLeftLabel
+onready var rockets_left_label = $UI/PlayerUI/RocketsLeftLabel
+onready var shields_left_label = $UI/PlayerUI/ShieldsLeftLabel
 
 
 var is_game_over = false
@@ -64,6 +67,17 @@ var machine_gun_cooldown_base = 0.1
 var machine_gun_cooldown = machine_gun_cooldown_base
 var is_gun_ready_to_fire = true
 
+var rocket_cooldown_base = 1
+var rocket_cooldown = rocket_cooldown_base
+var is_rocket_ready_to_fire = true
+
+var rocket_amount = 2
+
+var shield_cooldown_base = 1
+var shield_cooldown = shield_cooldown_base
+var is_shield_ready = true
+
+var shields_amount = 1
 
 # Name of the observed object for debugging purposes
 var observed_object = "" 
@@ -90,7 +104,10 @@ func _process(delta):
 	process_ship_movement(delta)
 	process_machine_gun_cooldown(delta)
 	
+	# Keep updating position
 	global_var.current_global_player_position = player_ship.global_transform.origin
+	
+	update_labels()
 	
 	# Only check if the game is paused
 	if is_paused:
@@ -297,3 +314,20 @@ func receive_damage(damage):
 
 func gain_health(health_gained):
 	player_health += health_gained
+
+
+func update_labels():
+	# Update health
+	health_left_label.text = "Health: " + str(player_health)
+	
+	# Update rockets amount
+	if rocket_amount > 0:
+		rockets_left_label.text = "Rockets left: " + str(rocket_amount)
+	else:
+		rockets_left_label.text = ""
+		
+	# Update shields amount
+	if shields_amount > 0:
+		shields_left_label.text = "Shields left: " + str(shields_amount)
+	else:
+		shields_left_label.text = ""
