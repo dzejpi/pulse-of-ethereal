@@ -73,6 +73,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	transition_overlay.fade_out()
 	check_game_end()
+	global_var.current_score = 0
 
 
 func _process(delta):

@@ -12,6 +12,9 @@ var music_game_music = null
 # Necessary to replace null with a proper preload("res://...")
 var sfx_sound_placeholder = null
 
+var highest_score = 0
+var current_score = 0
+
 
 func play_music():
 	music_node.stream = music_game_music
