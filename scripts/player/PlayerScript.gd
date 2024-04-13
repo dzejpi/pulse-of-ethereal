@@ -52,8 +52,8 @@ var reticle_left_limit = -68.0
 var reticle_right_limit = reticle_left_limit * -1
 
 var rotation_speed = 40
-var current_rotation = 0
-var target_rotation = 0
+var current_rotation = 0.0
+var target_rotation = 0.0
 var is_game_window_rotating = false
 
 var screen_width = 1280.0
@@ -116,11 +116,16 @@ func _physics_process(delta):
 			if player_ship.transform.origin.x < right_limit:
 				player_ship.transform.origin.x += 0.1
 		
-		if Input.is_action_pressed("rotate_down"):
-			rotate_game_window(45.0)
+		if global_var.debug:
+			if Input.is_action_just_pressed("rotate_down"):
+				target_rotation += 10.0
+				rotate_game_window(target_rotation)
+				print("New target rotation is: " + str(target_rotation))
 			
-		if Input.is_action_pressed("rotate_up"):
-			rotate_game_window(-45.0)
+			if Input.is_action_just_pressed("rotate_up"):
+				target_rotation -= 10.0
+				rotate_game_window(target_rotation)
+				print("New target rotation is: " + str(target_rotation))
 
 
 func _input(event):
@@ -259,7 +264,6 @@ func process_game_window_rotation(delta):
 	
 	# Adjust if close enough
 	if abs(current_rotation - target_rotation) < 0.5:
-		var new_rotation = Transform().rotated(Vector3(1, 0, 0), deg2rad(target_rotation))
 		is_game_window_rotating = false
 
 

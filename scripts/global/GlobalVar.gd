@@ -12,6 +12,9 @@ var music_game_music = null
 # Necessary to replace null with a proper preload("res://...")
 var sfx_sound_placeholder = null
 
+# Turn to false once game finished
+var debug = true
+
 var highest_score = 0
 var current_score = 0
 
