@@ -100,7 +100,7 @@ script = ExtResource( 7 )
 [node name="EnemyBosses" type="Spatial" parent="GameWindow"]
 
 [node name="ModularSwallower" parent="GameWindow/EnemyBosses" instance=ExtResource( 14 )]
-transform = Transform( 3, 0, 1.04907e-06, 0, 3, 0, -1.04907e-06, 0, 3, 0, 0, -100 )
+transform = Transform( 3, 0, 1.04907e-06, 0, 3, 0, -1.04907e-06, 0, 3, 0, -120, -100 )
 
 [node name="EnemySpawner" type="Spatial" parent="GameWindow"]
 

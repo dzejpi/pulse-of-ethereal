@@ -37,6 +37,10 @@ func swallower_spawn_enemy(enemy_number, spawn_position):
 	modular_swallower.spawn_enemy(enemy_number, spawn_position)
 
 
+func summon_swallower():
+	modular_swallower.is_hidden = false
+
+
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
 	match(event_number):
@@ -49,11 +53,11 @@ func trigger_event(event_number):
 		3:
 			pass
 		4:
-			swallower_spawn_enemy(2, 1)
+			pass
 		5:
 			pass
 		6:
-			swallower_spawn_enemy(2, 3)
+			pass
 		7:
 			pass
 		8:
