@@ -4,12 +4,8 @@ extends Spatial
 onready var ray_cast = $BulletCollisionBody/RayCast
 
 
-var speed = 96
+var speed = -20
 var destruction_countdown = 5
-
-
-func _ready():
-	pass
 
 
 func _process(delta):

@@ -36,6 +36,7 @@ var basic_fov = 90
 var increased_fov = 91
 var current_fov = basic_fov
 
+var player_health = 100
 
 var mouse_sensitivity = 0.75
 
@@ -284,3 +285,13 @@ func process_machine_gun_cooldown(delta):
 
 func display_current_score():
 	current_score_label.text = str(global_var.current_score)
+
+
+func receive_damage(damage):
+	player_health -= damage
+	if player_health < 0:
+		is_game_over = true
+
+
+func gain_health(health_gained):
+	player_health += health_gained
