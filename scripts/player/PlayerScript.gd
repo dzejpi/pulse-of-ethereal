@@ -15,6 +15,9 @@ onready var game_over_scene = $UI/GameEnd/GameOverScene
 
 onready var player_camera = $PlayerCamera
 
+onready var player_spaceship = $PlayerShip/player_spaceship
+
+
 onready var reticle = $Reticle
 onready var player_ship = $PlayerShip
 
@@ -187,16 +190,16 @@ func shoot_machine_gun():
 		
 		var bullet = bullet_scene.instance()
 		bullets.add_child(bullet)
-		bullet.global_transform.origin.x = player_ship.global_transform.origin.x - 1
-		bullet.global_transform.origin.y = player_ship.global_transform.origin.y + 0.2
-		bullet.global_transform.origin.z = player_ship.global_transform.origin.z + 0.6
+		bullet.global_transform.origin.x = player_spaceship.global_transform.origin.x - 1.2
+		bullet.global_transform.origin.y = player_spaceship.global_transform.origin.y + 0.2
+		bullet.global_transform.origin.z = player_spaceship.global_transform.origin.z + 0.6
 		bullet.look_at(reticle.global_transform.origin, Vector3.UP)
 		
 		var bullet_two = bullet_scene.instance()
 		bullets.add_child(bullet_two)
-		bullet_two.global_transform.origin.x = player_ship.global_transform.origin.x - 1
-		bullet_two.global_transform.origin.y = player_ship.global_transform.origin.y + 0.2
-		bullet_two.global_transform.origin.z = player_ship.global_transform.origin.z - 0.6
+		bullet_two.global_transform.origin.x = player_spaceship.global_transform.origin.x - 1.2
+		bullet_two.global_transform.origin.y = player_spaceship.global_transform.origin.y + 0.2
+		bullet_two.global_transform.origin.z = player_spaceship.global_transform.origin.z - 0.6
 		bullet_two.look_at(reticle.global_transform.origin, Vector3.UP)
 
 
