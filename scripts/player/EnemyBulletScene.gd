@@ -4,8 +4,12 @@ extends Spatial
 onready var ray_cast = $BulletCollisionBody/RayCast
 
 
-var speed = -20
+var speed = 10
 var destruction_countdown = 5
+
+
+func _ready():
+	self.look_at(global_var.current_global_player_position, Vector3.UP)
 
 
 func _process(delta):
@@ -15,10 +19,10 @@ func _process(delta):
 	
 	if ray_cast.is_colliding():
 		var collision_object = ray_cast.get_collider().name
-		if collision_object == "EnemyBody":
-			print("I detected enemy body")
+		if collision_object == "PlayerBody":
+			print("I detected player body")
 			ray_cast.get_collider().get_parent().receive_damage(5.0)
-
+	
 	# Self destruct 
 	if destruction_countdown > 0:
 		destruction_countdown -= 1 * delta

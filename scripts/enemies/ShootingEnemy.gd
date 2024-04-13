@@ -33,4 +33,4 @@ func shoot_towards_player():
 	self.add_child(bullet)
 	bullet.global_transform.origin.x = self.global_transform.origin.x
 	bullet.global_transform.origin.y = self.global_transform.origin.y
-	bullet.global_transform.origin.z = self.global_transform.origin.z + 1
+	bullet.global_transform.origin.z = self.global_transform.origin.z

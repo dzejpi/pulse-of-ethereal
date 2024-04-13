@@ -90,6 +90,8 @@ func _process(delta):
 	process_ship_movement(delta)
 	process_machine_gun_cooldown(delta)
 	
+	global_var.current_global_player_position = player_ship.global_transform.origin
+	
 	# Only check if the game is paused
 	if is_paused:
 		check_pause_update()

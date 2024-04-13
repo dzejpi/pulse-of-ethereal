@@ -15,6 +15,8 @@ var sfx_sound_placeholder = null
 # Turn to false once game finished
 var debug = true
 
+var current_global_player_position = Vector3(0.0, 0.0, 0.0)
+
 var highest_score = 0
 var current_score = 0
 
