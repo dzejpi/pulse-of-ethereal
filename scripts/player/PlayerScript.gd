@@ -181,6 +181,7 @@ func shoot_machine_gun():
 	if is_gun_ready_to_fire:
 		machine_gun_cooldown = machine_gun_cooldown_base
 		is_gun_ready_to_fire = false
+		global_var.play_sound("shoot")
 		
 		var bullet = bullet_scene.instance()
 		bullets.add_child(bullet)

@@ -11,6 +11,7 @@ var music_game_music = null
 
 # Necessary to replace null with a proper preload("res://...")
 var sfx_sound_placeholder = null
+var sfx_shoot = preload("res://assets/sfx/sound_shoot.wav")
 
 # Turn to false once game finished
 var debug = true
@@ -32,8 +33,8 @@ func stop_music():
 
 func play_sound(sfx_name):
 	match(sfx_name):
-		"placeholder":
-			sfx_node.stream = sfx_sound_placeholder
+		"shoot":
+			sfx_node.stream = sfx_shoot
 			sfx_node.play()
 
 
