@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://3d/export/enemy_swallower_e.gltf" type="PackedScene" id=1]
+[ext_resource path="res://3d/export/enemy_swallower_b.gltf" type="PackedScene" id=2]
+[ext_resource path="res://3d/export/enemy_swallower_d.gltf" type="PackedScene" id=3]
+[ext_resource path="res://3d/export/enemy_swallower_c.gltf" type="PackedScene" id=4]
+[ext_resource path="res://3d/export/enemy_swallower_a.gltf" type="PackedScene" id=5]
+[ext_resource path="res://scripts/enemy_bosses/SwallowerScene.gd" type="Script" id=6]
+
+[node name="ModularSwallower" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="NodeE" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -17 )
+
+[node name="enemy_swallower_e" parent="NodeE" instance=ExtResource( 1 )]
+transform = Transform( -1, -8.74228e-08, 3.82137e-15, 8.74228e-08, -1, 8.74228e-08, -3.82137e-15, 8.74228e-08, 1, 0, 17, -7.43094e-07 )
+
+[node name="NodeD" type="Spatial" parent="NodeE"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.74846e-07, 4 )
+
+[node name="enemy_swallower_d" parent="NodeE/NodeD" instance=ExtResource( 3 )]
+transform = Transform( -1, -7.57104e-08, -4.37114e-08, 8.4444e-08, -0.707107, -0.707107, 2.26267e-08, -0.707107, 0.707107, 0, 12.3848, 7.87116 )
+
+[node name="NodeC" type="Spatial" parent="NodeE/NodeD"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -1.03528, 3.8637 )
+
+[node name="enemy_swallower_c" parent="NodeE/NodeD/NodeC" instance=ExtResource( 4 )]
+transform = Transform( -1, -4.37114e-08, -7.57104e-08, 7.57104e-08, 8.9407e-08, -1, 4.37114e-08, -1, -8.9407e-08, 0, 6.16027, 9.33013 )
+
+[node name="NodeB" type="Spatial" parent="NodeE/NodeD/NodeC"]
+
+[node name="enemy_swallower_b" parent="NodeE/NodeD/NodeC/NodeB" instance=ExtResource( 2 )]
+transform = Transform( -1, -2.26267e-08, -8.44441e-08, 7.57104e-08, 0.25882, -0.965927, 4.37114e-08, -0.965927, -0.25882, 0, 4.79424, 9.69616 )
+
+[node name="NodeA" type="Spatial" parent="NodeE/NodeD/NodeC/NodeB"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 4.16026, 12.7942 )
+
+[node name="enemy_swallower_a" parent="NodeE/NodeD/NodeC/NodeB/NodeA" instance=ExtResource( 5 )]
+transform = Transform( -1, 2.6054e-15, -8.74228e-08, -2.6054e-15, 1, 5.96046e-08, 8.74227e-08, 5.96046e-08, -1, 0, 2.65685, -1 )

@@ -22,7 +22,7 @@ var ready_position_z = -28
 
 var spawn_ship_speed = 0.25
 
-var is_hidden = false
+var is_hidden = true
 
 
 func _ready():
