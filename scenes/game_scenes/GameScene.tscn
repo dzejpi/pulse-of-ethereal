@@ -98,7 +98,7 @@ script = ExtResource( 7 )
 [node name="EnemySpawner" type="Spatial" parent="GameWindow"]
 
 [node name="enemy_spawner_ship" parent="GameWindow/EnemySpawner" instance=ExtResource( 13 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.13687e-13, 6, 24 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 12, 24 )
 
 [node name="PowerUpSpawner" type="Spatial" parent="GameWindow"]
 

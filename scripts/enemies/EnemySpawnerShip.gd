@@ -13,12 +13,12 @@ onready var enemies_node = $"../../Enemies"
 
 
 var hidden_position_x = 0
-var hidden_position_y = 6
+var hidden_position_y = 12
 var hidden_position_z = 24
 
 var ready_position_x = 0
-var ready_position_y = 6
-var ready_position_z = -24
+var ready_position_y = 0
+var ready_position_z = -28
 
 var spawn_ship_speed = 0.25
 
@@ -36,12 +36,19 @@ func _process(delta):
 			self.transform.origin.z += 1 * spawn_ship_speed
 			if self.transform.origin.z >= hidden_position_z:
 				self.transform.origin.z = hidden_position_z
+		if self.transform.origin.y < hidden_position_y:
+			self.transform.origin.y += 0.75 * spawn_ship_speed
+			if self.transform.origin.y >= hidden_position_y:
+				self.transform.origin.y = hidden_position_y
 	else:
 		if self.transform.origin.z > ready_position_z:
 			self.transform.origin.z -= 1 * spawn_ship_speed
 			if self.transform.origin.z <= ready_position_z:
 				self.transform.origin.z = ready_position_z
-
+		if self.transform.origin.y > ready_position_y:
+			self.transform.origin.y -= 0.25 * spawn_ship_speed
+			if self.transform.origin.y <= ready_position_y:
+				self.transform.origin.y = ready_position_y
 
 func spawn_enemy(enemy_number, spawn_position):
 	match(enemy_number):
