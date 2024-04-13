@@ -35,7 +35,6 @@ func _process(delta):
 			self.get_parent().add_child(explosion)
 			
 			explosion.global_transform.origin = self.global_transform.origin
-			explosion.adjust_size(0.5)
 			
 			queue_free()
 	

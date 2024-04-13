@@ -10,6 +10,7 @@ var lasers_spawned = false
 
 
 var laser_scene = preload("res://scenes/player/EnemyLaserScene.tscn")
+var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
 
 
 func _ready():
@@ -38,6 +39,12 @@ func receive_damage(damage_received):
 	enemy_health -= damage_received
 	if enemy_health <= 0:
 		global_var.current_score += enemy_score
+		
+		var explosion = explosion_scene.instance()
+		self.get_parent().add_child(explosion)
+					
+		explosion.global_transform.origin = self.global_transform.origin
+		
 		queue_free()
 
 
