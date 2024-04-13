@@ -54,8 +54,8 @@ var reticle_right_limit = reticle_left_limit * -1
 var screen_width = 1280.0
 var screen_height = 720.0
 
-var gun_cooldown_base = 0.1
-var gun_cooldown = gun_cooldown_base
+var machine_gun_cooldown_base = 0.1
+var machine_gun_cooldown = machine_gun_cooldown_base
 var is_gun_ready_to_fire = true
 
 
@@ -90,12 +90,12 @@ func _process(delta):
 	var forward = -Transform().basis.z.normalized()
 	translate(forward * ship_speed * delta)
 	
-	if gun_cooldown > 0:
-		gun_cooldown -= 1 * delta
+	if machine_gun_cooldown > 0:
+		machine_gun_cooldown -= 1 * delta
 	else:
-		gun_cooldown = gun_cooldown_base
+		machine_gun_cooldown = machine_gun_cooldown_base
 		is_gun_ready_to_fire = true
-	
+
 
 
 func _physics_process(delta):
@@ -154,7 +154,7 @@ func _input(event):
 
 func shoot_machine_gun():
 	if is_gun_ready_to_fire:
-		gun_cooldown = gun_cooldown_base
+		machine_gun_cooldown = machine_gun_cooldown_base
 		is_gun_ready_to_fire = false
 		
 		var bullet = bullet_scene.instance()
@@ -225,26 +225,6 @@ func check_game_end():
 		player_ui.hide()
 	else:
 		game_over_scene.hide()
-
-
-func increase_fov():
-	current_fov = player_camera.fov
-	
-	if current_fov < increased_fov:
-		current_fov += 0.1
-		change_fov(current_fov)
-
-
-func decrease_fov():
-	current_fov = player_camera.fov
-	
-	if current_fov > basic_fov:
-		current_fov -= 0.2
-		change_fov(current_fov)
-
-
-func change_fov(player_current_fov):
-	player_camera.fov = player_current_fov
 
 
 func process_collisions():
