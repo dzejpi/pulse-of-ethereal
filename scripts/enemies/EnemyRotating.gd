@@ -29,9 +29,9 @@ func _process(delta):
 		if !lasers_spawned:
 			lasers_spawned = true
 			spawn_lasers()
-
+	
+	
 	if self.transform.origin.z >= 0:
-		global_var.current_score += enemy_score
 		queue_free()
 
 

@@ -19,6 +19,9 @@ func _ready():
 func _process(delta):
 	process_enemy_movement(delta)
 	
+	if self.transform.origin.z >= -3:
+		queue_free()
+	
 	if shooting_countdown > 0:
 		shooting_countdown -= 4 * delta
 	else:
