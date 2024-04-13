@@ -341,3 +341,7 @@ func update_labels():
 		shields_left_label.text = "Shields left: " + str(shields_amount)
 	else:
 		shields_left_label.text = ""
+
+
+func change_spaceship_speed(new_speed):
+	ship_speed = new_speed

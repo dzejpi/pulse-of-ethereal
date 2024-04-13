@@ -16,6 +16,22 @@ func change_rotation(target_rotation):
 	game_window.rotate_game_window(target_rotation)
 
 
+func change_spaceship_speed(new_speed):
+	game_window.change_spaceship_speed(new_speed)
+
+
+func ready_enemy_spawner():
+	pass
+	
+	
+func unready_enemy_spawner():
+	pass
+
+
+func spawn_enemy(enemy_number, spawn_position):
+	pass
+
+
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
 	match(event_number):
