@@ -26,6 +26,7 @@ var bullet_scene = preload("res://scenes/player/GunBulletScene.tscn")
 # UI
 onready var player_ui = $UI/PlayerUI
 onready var tooltip = $UI/PlayerUI/Tooltip
+onready var current_score_label = $UI/PlayerUI/CurrentScoreLabel
 
 
 var is_game_over = false
@@ -79,6 +80,7 @@ func _ready():
 func _process(delta):
 	check_game_end()
 	process_collisions()
+	current_score_label.text = str(global_var.current_score)
 	
 	if is_paused:
 		check_pause_update()

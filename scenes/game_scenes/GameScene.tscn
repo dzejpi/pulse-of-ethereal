@@ -132,6 +132,13 @@ visible = false
 
 [node name="Tooltip" parent="GameWindow/UI/PlayerUI" instance=ExtResource( 3 )]
 
+[node name="CurrentScoreLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
+margin_right = 1280.0
+margin_bottom = 64.0
+text = "0"
+align = 1
+valign = 1
+
 [node name="Bullets" type="Spatial" parent="."]
 
 [node name="Environment" type="Spatial" parent="."]
