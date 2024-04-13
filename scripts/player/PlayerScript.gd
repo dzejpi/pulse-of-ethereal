@@ -80,22 +80,13 @@ func _ready():
 func _process(delta):
 	check_game_end()
 	process_collisions()
-	current_score_label.text = str(global_var.current_score)
+	display_current_score()
+	process_ship_movement(delta)
+	process_machine_gun_cooldown(delta)
 	
+	# Only check if the game is paused
 	if is_paused:
 		check_pause_update()
-		
-	player_ship.look_at(reticle.global_transform.origin, Vector3.UP)
-	
-	var forward = -Transform().basis.z.normalized()
-	translate(forward * ship_speed * delta)
-	
-	if machine_gun_cooldown > 0:
-		machine_gun_cooldown -= 1 * delta
-	else:
-		machine_gun_cooldown = machine_gun_cooldown_base
-		is_gun_ready_to_fire = true
-
 
 
 func _physics_process(delta):
@@ -240,3 +231,26 @@ func process_collisions():
 		if collision_object != observed_object:
 			observed_object = collision_object
 			print("Player is looking at: nothing.")
+
+
+func rotate_ship(target_rotation):
+	pass
+
+
+func process_ship_movement(delta):
+	player_ship.look_at(reticle.global_transform.origin, Vector3.UP)
+	
+	var forward = -Transform().basis.z.normalized()
+	translate(forward * ship_speed * delta)
+
+
+func process_machine_gun_cooldown(delta):
+	if machine_gun_cooldown > 0:
+		machine_gun_cooldown -= 1 * delta
+	else:
+		machine_gun_cooldown = machine_gun_cooldown_base
+		is_gun_ready_to_fire = true
+
+
+func display_current_score():
+	current_score_label.text = str(global_var.current_score)
