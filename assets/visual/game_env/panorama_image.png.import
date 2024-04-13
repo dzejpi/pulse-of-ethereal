@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ase_cubemap_up.png-063832c28bfaa6f9c4b6745927e3aecf.stex"
+path="res://.import/panorama_image.png-cef3f79c2345b22ab44c3a4b2072c0c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/game_env/ase_cubemap_up.png"
-dest_files=[ "res://.import/ase_cubemap_up.png-063832c28bfaa6f9c4b6745927e3aecf.stex" ]
+source_file="res://assets/visual/game_env/panorama_image.png"
+dest_files=[ "res://.import/panorama_image.png-cef3f79c2345b22ab44c3a4b2072c0c0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

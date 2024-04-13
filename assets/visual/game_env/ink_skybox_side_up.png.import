@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ase_cubemap_front.png-b9278595f53985de61de82c8d2135b6d.stex"
+path="res://.import/ink_skybox_side_up.png-3e223bdf1d1b88a0208a00d122dfd7bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/game_env/ase_cubemap_front.png"
-dest_files=[ "res://.import/ase_cubemap_front.png-b9278595f53985de61de82c8d2135b6d.stex" ]
+source_file="res://assets/visual/game_env/ink_skybox_side_up.png"
+dest_files=[ "res://.import/ink_skybox_side_up.png-3e223bdf1d1b88a0208a00d122dfd7bd.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/game_scenes/GameSceneOne.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/enemies/EnemySpawnerShip.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/enemy_bosses/ModularSwallowerScene.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/enemy_bosses/ModularThinkerScene.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/environment/WorldEnvironment.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -234,3 +235,5 @@ width = 64.0
 depth = 32.0
 
 [node name="TransitionOverlay" parent="." instance=ExtResource( 2 )]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 16 )]
