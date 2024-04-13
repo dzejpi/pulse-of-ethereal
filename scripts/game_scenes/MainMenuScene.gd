@@ -1,4 +1,4 @@
-extends Node2D
+extends Spatial
 
 
 onready var high_score_label = $Score/HighScoreLabel

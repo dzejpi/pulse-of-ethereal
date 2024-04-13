@@ -1,4 +1,4 @@
-extends Node2D
+extends Spatial
 
 
 onready var dev_logo_sprite = $DevLogoSprite
