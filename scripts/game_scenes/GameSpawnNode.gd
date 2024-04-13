@@ -62,7 +62,7 @@ func trigger_event(event_number):
 		3:
 			pass
 		4:
-			pass
+			ready_enemy_spawner()
 		5:
 			pass
 		6:
@@ -71,7 +71,6 @@ func trigger_event(event_number):
 			pass
 		8:
 			pass
-			#ready_enemy_spawner()
 		9:
 			pass
 		10:
@@ -80,47 +79,46 @@ func trigger_event(event_number):
 			pass
 		12:
 			pass
-			#enemy_spawner_ship.spawn_enemy(1, 1)
 		13:
 			pass
 		14:
 			pass
-			#enemy_spawner_ship.spawn_enemy(1, 2)
 		15:
 			pass
 		16:
-			pass
-			#enemy_spawner_ship.spawn_enemy(1, 3)
+			enemy_spawner_ship.spawn_enemy(1, 1)
+			enemy_spawner_ship.spawn_enemy(1, 2)
+			enemy_spawner_ship.spawn_enemy(1, 3)
 		17:
 			pass
 		18:
 			pass
-			#enemy_spawner_ship.spawn_enemy(2, 1)
+			enemy_spawner_ship.spawn_enemy(2, 1)
 		19:
 			pass
 		20:
 			pass
-			#enemy_spawner_ship.spawn_enemy(2, 2)
+			enemy_spawner_ship.spawn_enemy(2, 2)
 		21:
 			pass
 		22:
 			pass
-			#enemy_spawner_ship.spawn_enemy(2, 3)
+			enemy_spawner_ship.spawn_enemy(2, 3)
 		23:
 			pass
 		24:
 			pass
-			#enemy_spawner_ship.spawn_enemy(3, 1)
+			enemy_spawner_ship.spawn_enemy(3, 1)
 		25:
 			pass
 		26:
 			pass
-			#enemy_spawner_ship.spawn_enemy(3, 2)
+			enemy_spawner_ship.spawn_enemy(3, 2)
 		27:
 			pass
 		28:
 			pass
-			#enemy_spawner_ship.spawn_enemy(3, 3)
+			enemy_spawner_ship.spawn_enemy(3, 3)
 		29:
 			pass
 		30:
@@ -129,7 +127,7 @@ func trigger_event(event_number):
 			pass
 		32:
 			pass
-			#unready_enemy_spawner()
+			unready_enemy_spawner()
 		33:
 			pass
 		34:
