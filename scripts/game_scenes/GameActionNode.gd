@@ -1,7 +1,7 @@
 extends Node
 
 
-const BPM = 150
+const BPM = 128
 const BARS = 4
 
 
