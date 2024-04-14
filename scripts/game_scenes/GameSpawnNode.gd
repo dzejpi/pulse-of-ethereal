@@ -424,7 +424,8 @@ func trigger_event(event_number):
 		173:
 			pass
 		174:
-			pass
+			swallower_spawn_enemy(1, 1)
+			swallower_spawn_enemy(1, 3)
 		175:
 			pass
 		176:
@@ -534,8 +535,7 @@ func trigger_event(event_number):
 		217:
 			pass
 		218:
-			swallower_spawn_enemy(1, 1)
-			swallower_spawn_enemy(1, 3)
+			pass
 		219:
 			pass
 		220:
@@ -561,8 +561,7 @@ func trigger_event(event_number):
 		229:
 			pass
 		230:
-			swallower_spawn_enemy(1, 1)
-			swallower_spawn_enemy(1, 3)
+			pass
 		231:
 			pass
 		232:
@@ -574,19 +573,19 @@ func trigger_event(event_number):
 		235:
 			swallower_spawn_enemy(2, 3)
 		236:
-			swallower_spawn_enemy(1, 3)
+			pass
 		237:
 			swallower_spawn_enemy(2, 3)
 		238:
-			swallower_spawn_enemy(1, 3)
+			pass
 		239:
 			swallower_spawn_enemy(2, 3)
 		240:
-			swallower_spawn_enemy(1, 3)
+			pass
 		241:
 			swallower_spawn_enemy(2, 3)
 		242:
-			swallower_spawn_enemy(1, 3)
+			pass
 		243:
 			swallower_spawn_enemy(2, 3)
 		244:
@@ -802,7 +801,7 @@ func trigger_event(event_number):
 		349:
 			pass
 		350:
-			pass
+			unready_enemy_spawner()
 		351:
 			pass
 		352:
@@ -822,31 +821,31 @@ func trigger_event(event_number):
 		359:
 			pass
 		360:
-			pass
+			thinker_spawn_enemy(2, 1)
 		361:
-			pass
+			thinker_spawn_enemy(2, 3)
 		362:
-			pass
+			thinker_spawn_enemy(2, 1)
 		363:
-			pass
+			thinker_spawn_enemy(2, 3)
 		364:
-			pass
+			thinker_spawn_enemy(2, 1)
 		365:
-			pass
+			thinker_spawn_enemy(2, 3)
 		366:
-			pass
+			thinker_spawn_enemy(2, 1)
 		367:
-			pass
+			thinker_spawn_enemy(2, 1)
 		368:
-			pass
+			thinker_spawn_enemy(2, 3)
 		369:
-			pass
+			thinker_spawn_enemy(2, 1)
 		370:
-			pass
+			thinker_spawn_enemy(2, 3)
 		371:
-			pass
+			thinker_spawn_enemy(2, 1)
 		372:
-			pass
+			thinker_spawn_enemy(2, 3)
 		373:
 			pass
 		374:
