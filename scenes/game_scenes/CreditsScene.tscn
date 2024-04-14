@@ -44,7 +44,17 @@ margin_top = 64.0
 margin_right = 1216.0
 margin_bottom = 528.0
 theme = ExtResource( 8 )
-text = "Credits text here."
+text = "Created in 48 hours by DzejPi for Ludum Dare #55.
+Theme: Summoning
+
+Dedicated to my closest ones (you know who you are)!
+You keep me sane in these times. 
+
+Thank you!
+
+Give a hug to those you love, and keep those who
+are no longer with us in your thoughts.
+That way, they will be forever with you."
 align = 1
 valign = 1
 
