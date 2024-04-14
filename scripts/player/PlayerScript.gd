@@ -378,20 +378,21 @@ func display_current_score():
 
 
 func receive_damage(damage):
-	if !is_shield_active:
-		player_health -= damage
-		if player_health <= 0:
-			if !is_game_over:
-				var explosion = explosion_scene.instance()
-				self.get_parent().add_child(explosion)
-				
-				explosion.global_transform.origin = self.global_transform.origin
-				explosion.adjust_size(0.5)
-				
-				self.hide()
-				bullets.hide()
-				
-				is_game_over = true
+	if !is_game_over && !is_game_won:
+		if !is_shield_active:
+			player_health -= damage
+			if player_health <= 0:
+				if !is_game_over:
+					var explosion = explosion_scene.instance()
+					self.get_parent().add_child(explosion)
+					
+					explosion.global_transform.origin = self.global_transform.origin
+					explosion.adjust_size(0.5)
+					
+					self.hide()
+					bullets.hide()
+					
+					is_game_over = true
 
 
 func gain_health(health_gained):
