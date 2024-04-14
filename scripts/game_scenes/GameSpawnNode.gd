@@ -64,7 +64,13 @@ func win_game():
 
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
+	if global_var.debug:
+		# Fast forward for debugging purposes
+		var skip_adjustment = 0
+		event_number += skip_adjustment
+	
 	print("Event number is now: " + str(event_number))
+	
 	
 	match(event_number):
 		0:
@@ -105,7 +111,6 @@ func trigger_event(event_number):
 			pass
 		18:
 			pass
-			pass
 		19:
 			pass
 		20:
@@ -115,21 +120,17 @@ func trigger_event(event_number):
 			pass
 		22:
 			pass
-			pass
 		23:
 			pass
 		24:
-			pass
 			pass
 		25:
 			pass
 		26:
 			pass
-			pass
 		27:
 			pass
 		28:
-			pass
 			pass
 		29:
 			pass
@@ -665,15 +666,15 @@ func trigger_event(event_number):
 		281:
 			pass
 		282:
-			pass
+			spawn_enemy(2, 1)
 		283:
 			pass
 		284:
-			pass
+			spawn_enemy(2, 2)
 		285:
 			pass
 		286:
-			pass
+			spawn_enemy(2, 3)
 		287:
 			pass
 		288:
@@ -747,7 +748,7 @@ func trigger_event(event_number):
 		321:
 			pass
 		322:
-			pass
+			spawn_enemy(1, 1)
 		323:
 			pass
 		324:
@@ -755,7 +756,7 @@ func trigger_event(event_number):
 		325:
 			pass
 		326:
-			pass
+			spawn_enemy(1, 3)
 		327:
 			pass
 		328:
@@ -763,39 +764,39 @@ func trigger_event(event_number):
 		329:
 			pass
 		330:
-			pass
+			spawn_enemy(1, 2)
 		331:
 			pass
 		332:
 			pass
 		333:
-			pass
+			spawn_enemy(3, 1)
 		334:
-			pass
+			spawn_enemy(3, 2)
 		335:
-			pass
+			spawn_enemy(3, 3)
 		336:
-			pass
+			spawn_enemy(3, 1)
 		337:
-			pass
+			spawn_enemy(3, 2)
 		338:
-			pass
+			spawn_enemy(3, 3)
 		339:
 			pass
 		340:
 			pass
 		341:
-			pass
+			spawn_enemy(2, 1)
 		342:
-			pass
+			spawn_enemy(2, 2)
 		343:
-			pass
+			spawn_enemy(2, 3)
 		344:
-			pass
+			spawn_enemy(2, 1)
 		345:
-			pass
+			spawn_enemy(2, 2)
 		346:
-			pass
+			spawn_enemy(2, 3)
 		347:
 			pass
 		348:
@@ -953,63 +954,74 @@ func trigger_event(event_number):
 		424:
 			pass
 		425:
-			pass
+			thinker_spawn_enemy(2, 1)
 		426:
-			pass
+			thinker_spawn_enemy(2, 3)
 		427:
 			pass
 		428:
 			pass
 		429:
-			pass
+			thinker_spawn_enemy(2, 1)
 		430:
-			pass
+			thinker_spawn_enemy(2, 3)
 		431:
 			pass
 		432:
 			pass
 		433:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		434:
 			pass
 		435:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		436:
 			pass
 		437:
-			pass
+			thinker_spawn_enemy(3, 1)
+			thinker_spawn_enemy(3, 3)
 		438:
 			pass
 		439:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		440:
 			pass
 		441:
-			pass
+			thinker_spawn_enemy(3, 1)
+			thinker_spawn_enemy(3, 3)
 		442:
 			pass
 		443:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		444:
 			pass
 		445:
-			pass
+			thinker_spawn_enemy(3, 1)
+			thinker_spawn_enemy(3, 3)
 		446:
 			pass
 		447:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		448:
 			pass
 		449:
-			pass
+			thinker_spawn_enemy(3, 1)
+			thinker_spawn_enemy(3, 3)
 		450:
 			pass
 		451:
-			pass
+			thinker_spawn_enemy(2, 1)
+			thinker_spawn_enemy(2, 3)
 		452:
 			pass
 		453:
-			pass
+			thinker_spawn_enemy(3, 1)
+			thinker_spawn_enemy(3, 3)
 		454:
 			pass
 		455:
@@ -1055,7 +1067,7 @@ func trigger_event(event_number):
 		475:
 			pass
 		476:
-			pass
+			ready_enemy_spawner()
 		477:
 			pass
 		478:
@@ -1071,75 +1083,76 @@ func trigger_event(event_number):
 		483:
 			pass
 		484:
-			ready_enemy_spawner()
+			pass
 		485:
 			pass
 		486:
 			pass
 		487:
-			pass
+			spawn_enemy(2, 1)
 		488:
 			pass
 		489:
-			pass
+			spawn_enemy(2, 2)
 		490:
 			pass
 		491:
-			pass
+			spawn_enemy(2, 3)
 		492:
 			pass
 		493:
-			pass
+			spawn_enemy(2, 1)
 		494:
 			pass
 		495:
-			pass
+			spawn_enemy(2, 2)
 		496:
 			pass
 		497:
-			pass
+			spawn_enemy(2, 3)
 		498:
 			pass
 		499:
 			pass
 		500:
-			pass
+			spawn_enemy(2, 1)
 		501:
-			pass
+			spawn_enemy(2, 2)
 		502:
-			pass
+			spawn_enemy(2, 3)
 		503:
-			pass
+			spawn_enemy(2, 3)
 		504:
-			pass
+			spawn_enemy(2, 2)
 		505:
-			pass
+			spawn_enemy(2, 1)
 		506:
-			pass
+			spawn_enemy(2, 1)
 		507:
-			pass
+			spawn_enemy(2, 1)
 		508:
-			pass
+			spawn_enemy(2, 1)
 		509:
-			pass
+			spawn_enemy(2, 1)
 		510:
-			pass
+			spawn_enemy(2, 2)
 		511:
-			pass
+			spawn_enemy(2, 2)
 		512:
-			pass
+			spawn_enemy(2, 2)
 		513:
-			pass
+			spawn_enemy(2, 2)
 		514:
-			pass
+			spawn_enemy(2, 3)
 		515:
-			pass
+			spawn_enemy(2, 3)
 		516:
-			pass
+			spawn_enemy(2, 3)
 		517:
-			pass
+			spawn_enemy(2, 3)
 		518:
-			pass
+			spawn_enemy(1, 1)
+			spawn_enemy(1, 3)
 		519:
 			pass
 		520:
@@ -1147,7 +1160,8 @@ func trigger_event(event_number):
 		521:
 			pass
 		522:
-			pass
+			spawn_enemy(1, 1)
+			spawn_enemy(1, 3)
 		523:
 			pass
 		524:
@@ -1155,41 +1169,47 @@ func trigger_event(event_number):
 		525:
 			pass
 		526:
-			pass
+			spawn_enemy(1, 1)
+			spawn_enemy(1, 3)
 		527:
 			pass
 		528:
-			pass
+			spawn_enemy(2, 1)
 		529:
-			pass
+			spawn_enemy(2, 1)
 		530:
-			unready_enemy_spawner()
+			spawn_enemy(2, 3)
 		531:
-			pass
+			spawn_enemy(2, 3)
 		532:
-			pass
+			spawn_enemy(2, 2)
 		533:
-			pass
+			spawn_enemy(2, 2)
 		534:
 			pass
 		535:
-			pass
+			spawn_enemy(3, 1)
+			spawn_enemy(3, 3)
 		536:
 			pass
 		537:
-			pass
+			spawn_enemy(3, 1)
+			spawn_enemy(3, 3)
 		538:
 			pass
 		539:
-			pass
+			spawn_enemy(3, 1)
+			spawn_enemy(3, 3)
 		540:
 			pass
 		541:
-			pass
+			spawn_enemy(3, 1)
+			spawn_enemy(3, 3)
 		542:
 			pass
 		543:
-			pass
+			spawn_enemy(3, 1)
+			spawn_enemy(3, 3)
 		544:
 			pass
 		545:
@@ -1207,19 +1227,27 @@ func trigger_event(event_number):
 		551:
 			pass
 		552:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 2)
+			spawn_enemy(2, 3)
 		553:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 2)
+			spawn_enemy(2, 3)
 		554:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 2)
+			spawn_enemy(2, 3)
 		555:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 2)
+			spawn_enemy(2, 3)
 		556:
 			pass
 		557:
 			pass
 		558:
-			pass
+			unready_enemy_spawner()
 		559:
 			pass
 		560:
