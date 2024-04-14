@@ -13,5 +13,5 @@ func _process(delta):
 
 
 func collect_pickup():
-	self.get_parent().get_parent().activate_shield()
+	self.get_parent().get_parent().gain_shield()
 	queue_free()

@@ -108,7 +108,7 @@ func _ready():
 	transition_overlay.fade_out()
 	check_game_end()
 	global_var.current_score = 0
-	player_shield.hide()
+	#player_shield.hide()
 
 
 func _process(delta):
@@ -116,7 +116,7 @@ func _process(delta):
 	process_collisions()
 	display_current_score()
 	process_ship_movement(delta)
-	process_machine_gun_cooldown(delta)
+	process_all_cooldowns(delta)
 	manage_shield(delta)
 	
 	# Keep updating position
@@ -195,6 +195,9 @@ func _input(event):
 	if Input.is_action_just_released("gun_shoot_two"):
 		shoot_rocket()
 		
+	if Input.is_action_just_released("gun_shoot_three"):
+		activate_shield()
+		
 	# Handling the options menu
 	if Input.is_action_just_pressed("game_pause"):
 		if !is_game_over && !is_game_won:
@@ -232,7 +235,7 @@ func shoot_rocket():
 			rocket_amount -= 1
 			
 			machine_gun_cooldown = machine_gun_cooldown_base
-			is_gun_ready_to_fire = false
+			is_rocket_ready_to_fire = false
 			global_var.play_sound("shoot")
 			
 			var rocket = rocket_scene.instance()
@@ -344,12 +347,24 @@ func process_ship_movement(delta):
 	translate(forward * ship_speed * delta)
 
 
-func process_machine_gun_cooldown(delta):
+func process_all_cooldowns(delta):
 	if machine_gun_cooldown > 0:
 		machine_gun_cooldown -= 1 * delta
 	else:
 		machine_gun_cooldown = machine_gun_cooldown_base
 		is_gun_ready_to_fire = true
+		
+	if rocket_cooldown > 0:
+		rocket_cooldown -= 1 * delta
+	else:
+		rocket_cooldown = rocket_cooldown_base
+		is_rocket_ready_to_fire = true
+		
+	if shield_cooldown > 0:
+		shield_cooldown -= 1 * delta
+	else:
+		shield_cooldown = shield_cooldown_base
+		is_shield_ready = true
 
 
 func display_current_score():
@@ -382,10 +397,17 @@ func gain_rocket():
 	rocket_amount += 1
 
 
+func gain_shield():
+	shields_amount += 1
+
+
 func activate_shield():
-	shield_countdown = 15
-	is_shield_active = true
-	player_shield.show()
+	if is_shield_ready:
+		shields_amount -= 1
+		shield_countdown = 15
+		is_shield_active = true
+		is_shield_ready = false
+		player_shield.show()
 
 
 func manage_shield(delta):
