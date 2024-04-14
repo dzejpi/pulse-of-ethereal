@@ -22,25 +22,27 @@ func _process(delta):
 		countdown -= 1 * delta
 		if countdown < 1:
 			explosion_sprite.modulate.a = countdown
+			
+			if is_spawning:
+				is_spawning = false
+				
+				match(spawn_item):
+					1:
+						var health = health_pickup.instance()
+						self.get_parent().add_child(health)
+					
+						health.global_transform.origin = self.global_transform.origin
+					2:
+						var rocket = rocket_pickup.instance()
+						self.get_parent().add_child(rocket)
+					
+						rocket.global_transform.origin = self.global_transform.origin
+					3:
+						var shield = shield_pickup.instance()
+						self.get_parent().add_child(shield)
+					
+						shield.global_transform.origin = self.global_transform.origin
 	else:
-		if is_spawning:
-			match(spawn_item):
-				1:
-					var health = health_pickup.instance()
-					self.get_parent().add_child(health)
-				
-					health.global_transform.origin = self.global_transform.origin
-				2:
-					var rocket = rocket_pickup.instance()
-					self.get_parent().add_child(rocket)
-				
-					rocket.global_transform.origin = self.global_transform.origin
-				3:
-					var shield = shield_pickup.instance()
-					self.get_parent().add_child(shield)
-				
-					shield.global_transform.origin = self.global_transform.origin
-		
 		queue_free()
 
 
