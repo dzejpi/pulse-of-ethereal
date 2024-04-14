@@ -16,8 +16,8 @@
 [ext_resource path="res://scenes/enemy_bosses/ModularSwallowerScene.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/enemy_bosses/ModularThinkerScene.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/environment/WorldEnvironment.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/visual/ui/main_menu/menu_btn_focused.png" type="Texture" id=17]
 [ext_resource path="res://3d/export/player_shield.gltf" type="PackedScene" id=18]
-[ext_resource path="res://assets/visual/ui/main_menu/menu_btn_disabled.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -199,7 +199,7 @@ valign = 1
 [node name="LabelBackground" type="Sprite" parent="GameWindow/UI/PlayerUI/CurrentScoreLabel"]
 position = Vector2( 640, 32 )
 scale = Vector2( 1, 0.75 )
-texture = ExtResource( 19 )
+texture = ExtResource( 17 )
 
 [node name="ShieldsLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
 margin_left = 24.0
@@ -213,7 +213,7 @@ valign = 1
 [node name="LabelBackground" type="Sprite" parent="GameWindow/UI/PlayerUI/ShieldsLeftLabel"]
 position = Vector2( 74.5, 17.5 )
 scale = Vector2( 0.644531, 0.640625 )
-texture = ExtResource( 19 )
+texture = ExtResource( 17 )
 
 [node name="RocketsLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
 margin_left = 24.0
@@ -227,7 +227,7 @@ valign = 1
 [node name="LabelBackground" type="Sprite" parent="GameWindow/UI/PlayerUI/RocketsLeftLabel"]
 position = Vector2( 74.5, 17.5 )
 scale = Vector2( 0.644531, 0.640625 )
-texture = ExtResource( 19 )
+texture = ExtResource( 17 )
 
 [node name="HealthLeftLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
 margin_left = 24.0
@@ -241,7 +241,7 @@ valign = 1
 [node name="LabelBackground" type="Sprite" parent="GameWindow/UI/PlayerUI/HealthLeftLabel"]
 position = Vector2( 74.5, 17.5 )
 scale = Vector2( 0.644531, 0.640625 )
-texture = ExtResource( 19 )
+texture = ExtResource( 17 )
 
 [node name="BeatLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
 margin_top = 656.0

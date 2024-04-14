@@ -17,7 +17,7 @@ script = ExtResource( 10 )
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
 scale = Vector2( 4.42151, 9.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="GameWonLabel" type="Label" parent="."]
 margin_top = 96.0

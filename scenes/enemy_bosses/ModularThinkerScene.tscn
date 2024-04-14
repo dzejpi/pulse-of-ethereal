@@ -8,7 +8,7 @@
 [ext_resource path="res://3d/export/enemy_thinker_right_hand.gltf" type="PackedScene" id=6]
 [ext_resource path="res://3d/export/enemy_thinker_left_hand.gltf" type="PackedScene" id=7]
 [ext_resource path="res://3d/export/enemy_thinker_neck.gltf" type="PackedScene" id=8]
-[ext_resource path="res://assets/visual/ui/main_menu/menu_btn_disabled.png" type="Texture" id=9]
+[ext_resource path="res://assets/visual/ui/main_menu/menu_btn_focused.png" type="Texture" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.2, 0.2, 0.2 )
