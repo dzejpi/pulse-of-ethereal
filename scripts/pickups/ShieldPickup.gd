@@ -2,4 +2,5 @@ extends Spatial
 
 
 func collect_pickup():
-	pass
+	self.get_parent().get_parent().activate_shield()
+	queue_free()

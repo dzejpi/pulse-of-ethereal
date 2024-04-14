@@ -17,6 +17,8 @@ onready var player_camera = $PlayerCamera
 
 onready var player_spaceship = $PlayerShip/player_spaceship
 
+onready var player_shield = $PlayerShip/player_spaceship/player_shield
+
 
 onready var reticle = $Reticle
 onready var player_ship = $PlayerShip
@@ -86,6 +88,10 @@ var is_shield_ready = true
 
 var shields_amount = 1
 
+var is_shield_active = false
+var shield_countdown = 15
+
+
 # Name of the observed object for debugging purposes
 var observed_object = "" 
 
@@ -102,6 +108,7 @@ func _ready():
 	transition_overlay.fade_out()
 	check_game_end()
 	global_var.current_score = 0
+	player_shield.hide()
 
 
 func _process(delta):
@@ -110,6 +117,7 @@ func _process(delta):
 	display_current_score()
 	process_ship_movement(delta)
 	process_machine_gun_cooldown(delta)
+	manage_shield(delta)
 	
 	# Keep updating position
 	global_var.current_global_player_position = player_ship.global_transform.origin
@@ -349,18 +357,19 @@ func display_current_score():
 
 
 func receive_damage(damage):
-	player_health -= damage
-	if player_health <= 0:
-		if !is_game_over:
-			var explosion = explosion_scene.instance()
-			self.get_parent().add_child(explosion)
-			
-			explosion.global_transform.origin = self.global_transform.origin
-			explosion.adjust_size(0.5)
-			
-			self.hide()
-			
-			is_game_over = true
+	if !is_shield_active:
+		player_health -= damage
+		if player_health <= 0:
+			if !is_game_over:
+				var explosion = explosion_scene.instance()
+				self.get_parent().add_child(explosion)
+				
+				explosion.global_transform.origin = self.global_transform.origin
+				explosion.adjust_size(0.5)
+				
+				self.hide()
+				
+				is_game_over = true
 
 
 func gain_health(health_gained):
@@ -371,6 +380,21 @@ func gain_health(health_gained):
 
 func gain_rocket():
 	rocket_amount += 1
+
+
+func activate_shield():
+	shield_countdown = 15
+	is_shield_active = true
+	player_shield.show()
+
+
+func manage_shield(delta):
+	if is_shield_active:
+		if shield_countdown > 0:
+			shield_countdown -= 1 * delta
+		else:
+			is_shield_active = false
+			player_shield.hide()
 
 
 func update_labels():
