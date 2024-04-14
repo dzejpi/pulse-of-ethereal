@@ -11,5 +11,5 @@ dest_files=[ "res://.import/music_ethereal_pulse.mp3-64bb1297aadb8aeaba9960ae80e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
