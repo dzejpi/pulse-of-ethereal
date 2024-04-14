@@ -21,7 +21,7 @@ func _process(delta):
 	if ray_cast.is_colliding():
 		var collision_object = ray_cast.get_collider().name
 		if collision_object == "EnemyBody":
-			print("Enemy body shot")
+			#print("Enemy body shot")
 			ray_cast.get_collider().get_parent().receive_damage(5.0)
 			
 			var explosion = explosion_scene.instance()
@@ -31,6 +31,10 @@ func _process(delta):
 			explosion.adjust_size(0.25)
 			
 			queue_free()
+		
+		if collision_object == "Pickup":
+			print("Collecting pickup.")
+			ray_cast.get_collider().get_parent().collect_pickup()
 
 	# Self destruct 
 	if destruction_countdown > 0:

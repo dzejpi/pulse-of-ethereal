@@ -365,6 +365,12 @@ func receive_damage(damage):
 
 func gain_health(health_gained):
 	player_health += health_gained
+	if player_health > 150:
+		player_health = 150
+
+
+func gain_rocket():
+	rocket_amount += 1
 
 
 func update_labels():
