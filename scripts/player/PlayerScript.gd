@@ -41,6 +41,9 @@ onready var rockets_left_label = $UI/PlayerUI/RocketsLeftLabel
 onready var shields_left_label = $UI/PlayerUI/ShieldsLeftLabel
 
 
+
+
+
 var is_game_over = false
 var is_game_won = false
 
@@ -384,6 +387,7 @@ func receive_damage(damage):
 				explosion.adjust_size(0.5)
 				
 				self.hide()
+				bullets.hide()
 				
 				is_game_over = true
 
