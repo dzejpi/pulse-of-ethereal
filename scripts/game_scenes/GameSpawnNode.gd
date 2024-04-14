@@ -823,17 +823,17 @@ func trigger_event(event_number):
 		359:
 			pass
 		360:
-			thinker_spawn_enemy(2, 1)
+			pass
 		361:
-			thinker_spawn_enemy(2, 3)
+			pass
 		362:
-			thinker_spawn_enemy(2, 1)
+			pass
 		363:
-			thinker_spawn_enemy(2, 3)
+			pass
 		364:
-			thinker_spawn_enemy(2, 1)
+			pass
 		365:
-			thinker_spawn_enemy(2, 3)
+			pass
 		366:
 			thinker_spawn_enemy(2, 1)
 		367:
@@ -849,55 +849,55 @@ func trigger_event(event_number):
 		372:
 			thinker_spawn_enemy(2, 3)
 		373:
-			pass
+			thinker_spawn_enemy(2, 1)
 		374:
-			pass
+			thinker_spawn_enemy(2, 3)
 		375:
-			pass
+			thinker_spawn_enemy(2, 1)
 		376:
-			pass
+			thinker_spawn_enemy(2, 3)
 		377:
-			pass
+			thinker_spawn_enemy(2, 1)
 		378:
-			pass
+			thinker_spawn_enemy(2, 3)
 		379:
-			pass
+			thinker_spawn_enemy(2, 1)
 		380:
-			pass
+			thinker_spawn_enemy(2, 3)
 		381:
-			pass
+			thinker_spawn_enemy(2, 1)
 		382:
-			pass
+			thinker_spawn_enemy(2, 3)
 		383:
-			pass
+			thinker_spawn_enemy(2, 1)
 		384:
-			pass
+			thinker_spawn_enemy(2, 3)
 		385:
-			pass
+			thinker_spawn_enemy(2, 1)
 		386:
-			pass
+			thinker_spawn_enemy(2, 3)
 		387:
-			pass
+			thinker_spawn_enemy(2, 1)
 		388:
-			pass
+			thinker_spawn_enemy(2, 3)
 		389:
-			pass
+			thinker_spawn_enemy(1, 1)
 		390:
-			pass
+			thinker_spawn_enemy(1, 3)
 		391:
 			pass
 		392:
-			pass
+			thinker_spawn_enemy(3, 1)
 		393:
-			pass
+			thinker_spawn_enemy(3, 3)
 		394:
-			pass
+			thinker_spawn_enemy(3, 1)
 		395:
-			pass
+			thinker_spawn_enemy(3, 3)
 		396:
-			pass
+			thinker_spawn_enemy(2, 1)
 		397:
-			pass
+			thinker_spawn_enemy(2, 1)
 		398:
 			pass
 		399:
@@ -905,49 +905,49 @@ func trigger_event(event_number):
 		400:
 			pass
 		401:
-			pass
+			thinker_spawn_enemy(3, 1)
 		402:
 			pass
 		403:
 			pass
 		404:
-			pass
+			thinker_spawn_enemy(3, 3)
 		405:
 			pass
 		406:
 			pass
 		407:
-			pass
+			thinker_spawn_enemy(3, 1)
 		408:
 			pass
 		409:
 			pass
 		410:
-			pass
+			thinker_spawn_enemy(3, 3)
 		411:
-			pass
+			thinker_spawn_enemy(2, 1)
 		412:
-			pass
+			thinker_spawn_enemy(2, 3)
 		413:
-			pass
+			thinker_spawn_enemy(2, 1)
 		414:
-			pass
+			thinker_spawn_enemy(2, 3)
 		415:
-			pass
+			thinker_spawn_enemy(2, 1)
 		416:
-			pass
+			thinker_spawn_enemy(2, 3)
 		417:
-			pass
+			thinker_spawn_enemy(1, 1)
 		418:
-			pass
+			thinker_spawn_enemy(1, 3)
 		419:
-			pass
+			thinker_spawn_enemy(2, 1)
 		420:
-			pass
+			thinker_spawn_enemy(2, 3)
 		421:
-			pass
+			thinker_spawn_enemy(2, 1)
 		422:
-			pass
+			thinker_spawn_enemy(2, 3)
 		423:
 			pass
 		424:
@@ -1071,7 +1071,7 @@ func trigger_event(event_number):
 		483:
 			pass
 		484:
-			pass
+			ready_enemy_spawner()
 		485:
 			pass
 		486:
