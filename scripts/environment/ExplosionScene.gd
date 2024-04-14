@@ -2,6 +2,9 @@ extends Spatial
 
 
 onready var explosion_sprite = $ExplosionSprite
+onready var explosion_audio_stream_player = $ExplosionAudioStreamPlayer
+
+
 
 var health_pickup = preload("res://scenes/pickups/HealthPickup.tscn")
 var rocket_pickup = preload("res://scenes/pickups/RocketPickup.tscn")
@@ -71,3 +74,7 @@ func spawn(item):
 				print("Spawned")
 				spawn_item = item
 				is_spawning = true
+
+
+func play_explosion_sound():
+	explosion_audio_stream_player.play()

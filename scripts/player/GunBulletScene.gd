@@ -29,6 +29,7 @@ func _process(delta):
 			
 			explosion.global_transform.origin = self.global_transform.origin
 			explosion.adjust_size(0.25)
+			explosion.play_explosion_sound()
 			
 			queue_free()
 		

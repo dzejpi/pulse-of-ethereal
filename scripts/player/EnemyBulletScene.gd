@@ -32,6 +32,7 @@ func _process(delta):
 			
 			var explosion = explosion_scene.instance()
 			self.get_parent().add_child(explosion)
+			explosion.play_explosion_sound()
 			
 			explosion.global_transform.origin = self.global_transform.origin
 			explosion.adjust_size(0.25)

@@ -40,6 +40,7 @@ func receive_damage(damage_received):
 		explosion.spawn(1)
 					
 		explosion.global_transform.origin = self.global_transform.origin
+		explosion.play_explosion_sound()
 		
 		queue_free()
 
