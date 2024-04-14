@@ -37,6 +37,11 @@ text = "Latest score: 123456789"
 align = 1
 valign = 1
 
+[node name="LabelBack" type="Sprite" parent="CurrentScoreLabel"]
+position = Vector2( 640, 68 )
+scale = Vector2( 2.39844, 1 )
+texture = ExtResource( 2 )
+
 [node name="HighestScoreLabel" type="Label" parent="."]
 margin_top = 352.0
 margin_right = 1280.0
@@ -45,6 +50,11 @@ theme = ExtResource( 9 )
 text = "Highest score: 123456789"
 align = 1
 valign = 1
+
+[node name="LabelBack" type="Sprite" parent="HighestScoreLabel"]
+position = Vector2( 640, 68 )
+scale = Vector2( 2.39844, 1 )
+texture = ExtResource( 2 )
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2( 640, 550 )
