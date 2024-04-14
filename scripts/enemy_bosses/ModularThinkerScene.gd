@@ -35,7 +35,7 @@ func _process(delta):
 
 
 func receive_damage(damage_received):
-	print("Thinker is hit, remaining health: " + str(enemy_health))
+	#print("Thinker is hit, remaining health: " + str(enemy_health))
 	enemy_health -= damage_received
 	if enemy_health <= 0:
 		if !is_hidden:

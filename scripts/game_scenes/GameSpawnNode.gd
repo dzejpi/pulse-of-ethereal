@@ -69,7 +69,7 @@ func trigger_event(event_number):
 		var skip_adjustment = 0
 		event_number += skip_adjustment
 	
-	print("Event number is now: " + str(event_number))
+	#print("Event number is now: " + str(event_number))
 	
 	
 	match(event_number):

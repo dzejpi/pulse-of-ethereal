@@ -14,7 +14,7 @@ var sfx_sound_placeholder = null
 var sfx_shoot = preload("res://assets/sfx/sound_shoot.wav")
 
 # Turn to false once game finished
-var debug = true
+var debug = false
 
 var current_global_player_position = Vector3(0.0, 0.0, 0.0)
 

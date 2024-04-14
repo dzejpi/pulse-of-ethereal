@@ -43,7 +43,7 @@ func _process(delta):
 
 
 func receive_damage(damage_received):
-	print("Drone shot")
+	#print("Drone shot")
 	enemy_health -= damage_received
 	if enemy_health <= 0:
 		global_var.current_score += enemy_score
