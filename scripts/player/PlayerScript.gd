@@ -31,6 +31,9 @@ var rocket_scene = preload("res://scenes/player/GunRocketScene.tscn")
 
 var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
 
+onready var enemies = $Enemies
+
+
 
 # UI
 onready var player_ui = $UI/PlayerUI
@@ -301,6 +304,7 @@ func check_game_end():
 		game_won_scene.update_scores()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause_scene.is_game_paused = false
+		enemies.hide()
 		pause_scene.hide()
 		player_ui.hide()
 	else:
