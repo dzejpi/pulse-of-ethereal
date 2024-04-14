@@ -48,6 +48,7 @@ margin_left = -128.0
 margin_top = -128.0
 margin_right = 128.0
 margin_bottom = -64.0
+disabled = true
 toggle_mode = true
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 11 )
@@ -60,7 +61,7 @@ script = ExtResource( 3 )
 margin_right = 256.0
 margin_bottom = 64.0
 theme = ExtResource( 12 )
-text = "Music: on"
+text = "Music always on!"
 align = 1
 valign = 1
 
