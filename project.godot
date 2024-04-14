@@ -24,7 +24,8 @@ transition_overlay="*res://scenes/ui/TransitionOverlay.tscn"
 
 window/size/width=1280
 window/size/height=720
-window/stretch/aspect="expand"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
