@@ -43,7 +43,8 @@ func receive_damage(damage_received):
 
 
 func spawn_enemy(enemy_number, spawn_position):
-	if enemy_health >= 0:
+	# Don't spawn when hidden or dead
+	if enemy_health >= 0 && !is_hidden:
 		match(enemy_number):
 			1:
 				var new_enemy = enemy_one.instance()
