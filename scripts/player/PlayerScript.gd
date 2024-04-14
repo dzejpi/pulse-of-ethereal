@@ -374,7 +374,7 @@ func process_all_cooldowns(delta):
 
 
 func display_current_score():
-	current_score_label.text = str(int(global_var.current_score))
+	current_score_label.text = "Score: " + str(int(global_var.current_score))
 
 
 func receive_damage(damage):
@@ -433,15 +433,15 @@ func update_labels():
 	
 	# Update rockets amount
 	if rocket_amount > 0:
-		rockets_left_label.text = "Rockets left: " + str(rocket_amount)
+		rockets_left_label.text = "Rockets: " + str(rocket_amount)
 	else:
-		rockets_left_label.text = ""
+		rockets_left_label.text = "No rockets"
 		
 	# Update shields amount
 	if shields_amount > 0:
-		shields_left_label.text = "Shields left: " + str(shields_amount)
+		shields_left_label.text = "Shields: " + str(shields_amount)
 	else:
-		shields_left_label.text = ""
+		shields_left_label.text = "No shields"
 
 
 func change_spaceship_speed(new_speed):

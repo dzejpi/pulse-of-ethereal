@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://3d/export/enemy_swallower_e.gltf" type="PackedScene" id=1]
 [ext_resource path="res://3d/export/enemy_swallower_b.gltf" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://3d/export/enemy_swallower_a.gltf" type="PackedScene" id=5]
 [ext_resource path="res://scripts/enemy_bosses/SwallowerScene.gd" type="Script" id=6]
 [ext_resource path="res://themes/main_text_theme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/visual/ui/main_menu/menu_btn_disabled.png" type="Texture" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 1, 12 )
@@ -69,10 +70,15 @@ transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0
 shape = SubResource( 1 )
 
 [node name="SwallowerHealthLabel" type="Label" parent="."]
-margin_top = 64.0
+margin_top = 72.0
 margin_right = 1280.0
-margin_bottom = 128.0
+margin_bottom = 136.0
 theme = ExtResource( 7 )
 text = "0"
 align = 1
 valign = 1
+
+[node name="LabelBackground" type="Sprite" parent="SwallowerHealthLabel"]
+position = Vector2( 640, 32 )
+scale = Vector2( 1, 0.75 )
+texture = ExtResource( 8 )

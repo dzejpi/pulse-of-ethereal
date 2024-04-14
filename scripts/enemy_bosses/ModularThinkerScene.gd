@@ -22,7 +22,7 @@ var hidden_y = -120
 
 func _process(delta):
 	look_at(global_var.current_global_player_position, Vector3.UP)
-	thinker_health_label.text = "Thinker's health: " + str(enemy_health)
+	thinker_health_label.text = "Thinker HP: " + str(enemy_health)
 	
 	if is_hidden:
 		thinker_health_label.hide()

@@ -21,7 +21,7 @@ var hidden_y = -120
 
 func _process(delta):
 	look_at(global_var.current_global_player_position, Vector3.UP)
-	swallower_health_label.text = "Swallower's health: " + str(enemy_health)
+	swallower_health_label.text = "Swallower HP: " + str(enemy_health)
 	
 	if is_hidden:
 		swallower_health_label.hide()
