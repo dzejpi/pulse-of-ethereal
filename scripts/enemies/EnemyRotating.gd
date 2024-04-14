@@ -44,6 +44,7 @@ func receive_damage(damage_received):
 		self.get_parent().add_child(explosion)
 					
 		explosion.global_transform.origin = self.global_transform.origin
+		explosion.spawn(3)
 		
 		queue_free()
 

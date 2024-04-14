@@ -37,6 +37,7 @@ func receive_damage(damage_received):
 		
 		var explosion = explosion_scene.instance()
 		self.get_parent().add_child(explosion)
+		explosion.spawn(1)
 					
 		explosion.global_transform.origin = self.global_transform.origin
 		
