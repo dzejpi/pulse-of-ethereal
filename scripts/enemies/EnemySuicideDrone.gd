@@ -39,7 +39,6 @@ func _process(delta):
 			queue_free()
 	
 	if self.transform.origin.z > 0:
-		global_var.current_score += (enemy_score / 2)
 		queue_free()
 
 

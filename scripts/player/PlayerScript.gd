@@ -188,20 +188,21 @@ func _input(event):
 				reticle.transform.origin.y = reticle_down_limit
 			elif reticle.transform.origin.y >= reticle_up_limit:
 				reticle.transform.origin.y = reticle_up_limit
-		
-	if Input.is_action_pressed("gun_shoot"):
-		shoot_machine_gun()
 	
-	if Input.is_action_just_released("gun_shoot_two"):
-		shoot_rocket()
+	if !pause_scene.is_game_paused && !is_game_over && !is_game_won:
+		if Input.is_action_pressed("gun_shoot"):
+			shoot_machine_gun()
 		
-	if Input.is_action_just_released("gun_shoot_three"):
-		activate_shield()
-		
-	# Handling the options menu
-	if Input.is_action_just_pressed("game_pause"):
-		if !is_game_over && !is_game_won:
-			handle_pause_change()
+		if Input.is_action_just_released("gun_shoot_two"):
+			shoot_rocket()
+			
+		if Input.is_action_just_released("gun_shoot_three"):
+			activate_shield()
+			
+		# Handling the options menu
+		if Input.is_action_just_pressed("game_pause"):
+			if !is_game_over && !is_game_won:
+				handle_pause_change()
 
 
 func shoot_machine_gun():
