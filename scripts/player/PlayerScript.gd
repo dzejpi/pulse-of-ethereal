@@ -235,7 +235,7 @@ func shoot_machine_gun():
 
 
 func shoot_rocket():
-	if is_gun_ready_to_fire:
+	if is_rocket_ready_to_fire:
 		if rocket_amount > 0:
 			rocket_amount -= 1
 			
