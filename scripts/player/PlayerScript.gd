@@ -185,10 +185,8 @@ func _input(event):
 		shoot_machine_gun()
 	
 	if Input.is_action_just_released("gun_shoot_two"):
-		if rocket_amount > 0:
-			shoot_rocket()
-			rocket_amount -= 1
-	
+		shoot_rocket()
+		
 	# Handling the options menu
 	if Input.is_action_just_pressed("game_pause"):
 		if !is_game_over && !is_game_won:
@@ -222,18 +220,21 @@ func shoot_machine_gun():
 
 func shoot_rocket():
 	if is_gun_ready_to_fire:
-		machine_gun_cooldown = machine_gun_cooldown_base
-		is_gun_ready_to_fire = false
-		global_var.play_sound("shoot")
-		
-		var rocket = rocket_scene.instance()
-		bullets.add_child(rocket)
-		
-		rocket.global_transform.origin.x = player_spaceship.global_transform.origin.x - 1.2
-		rocket.global_transform.origin.y = player_spaceship.global_transform.origin.y - 0.2
-		rocket.global_transform.origin.z = player_spaceship.global_transform.origin.z
-		rocket.global_transform.basis = player_spaceship.global_transform.basis
-		rocket.look_at(reticle.global_transform.origin, Vector3.UP)
+		if rocket_amount > 0:
+			rocket_amount -= 1
+			
+			machine_gun_cooldown = machine_gun_cooldown_base
+			is_gun_ready_to_fire = false
+			global_var.play_sound("shoot")
+			
+			var rocket = rocket_scene.instance()
+			bullets.add_child(rocket)
+			
+			rocket.global_transform.origin.x = player_spaceship.global_transform.origin.x - 1.2
+			rocket.global_transform.origin.y = player_spaceship.global_transform.origin.y - 0.2
+			rocket.global_transform.origin.z = player_spaceship.global_transform.origin.z
+			rocket.global_transform.basis = player_spaceship.global_transform.basis
+			rocket.look_at(reticle.global_transform.origin, Vector3.UP)
 
 
 func check_pause_update():
