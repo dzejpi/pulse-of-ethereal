@@ -11,7 +11,7 @@ var enemy_two = preload("res://scenes/enemies/EnemySuicideDrone.tscn")
 var enemy_three = preload("res://scenes/enemies/EnemyRotating.tscn")
 
 var enemy_health = 1250
-var enemy_score = 10000
+var enemy_score = 100000
 
 var is_hidden = true
 

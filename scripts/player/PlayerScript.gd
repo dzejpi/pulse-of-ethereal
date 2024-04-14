@@ -127,7 +127,7 @@ func _process(delta):
 	global_var.current_global_player_position = player_static_body.global_transform.origin
 	
 	if !is_game_over && !is_game_won:
-		global_var.current_score += 5 * delta
+		global_var.current_score += 10 * delta
 		if global_var.highest_score <= global_var.current_score:
 			global_var.highest_score = global_var.current_score
 		

@@ -7,7 +7,7 @@ onready var ray_cast = $RayCast
 var explosion_scene = preload("res://scenes/environment/ExplosionScene.tscn")
 
 var enemy_health = 10.0
-var enemy_score = 10
+var enemy_score = 1000
 var enemy_speed = -16
 
 var turn_speed = 120

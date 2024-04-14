@@ -2,7 +2,7 @@ extends Spatial
 
 
 var enemy_health = 25.0
-var enemy_score = 10
+var enemy_score = 2000
 var enemy_speed = 6
 var shooting_countdown_base = 1
 var shooting_countdown = shooting_countdown_base
