@@ -679,7 +679,7 @@ func trigger_event(event_number):
 		288:
 			pass
 		289:
-			pass
+			spawn_enemy(1, 1)
 		290:
 			pass
 		291:
@@ -687,43 +687,43 @@ func trigger_event(event_number):
 		292:
 			pass
 		293:
-			pass
+			spawn_enemy(1, 3)
 		294:
 			pass
 		295:
 			pass
 		296:
-			pass
+			spawn_enemy(2, 1)
 		297:
 			pass
 		298:
 			pass
 		299:
-			pass
+			spawn_enemy(2, 2)
 		300:
 			pass
 		301:
 			pass
 		302:
-			pass
+			spawn_enemy(2, 3)
 		303:
 			pass
 		304:
 			pass
 		305:
-			pass
+			spawn_enemy(2, 1)
 		306:
 			pass
 		307:
 			pass
 		308:
-			pass
+			spawn_enemy(2, 2)
 		309:
 			pass
 		310:
 			pass
 		311:
-			pass
+			spawn_enemy(2, 3)
 		312:
 			pass
 		313:
@@ -731,7 +731,8 @@ func trigger_event(event_number):
 		314:
 			pass
 		315:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 3)
 		316:
 			pass
 		317:
@@ -739,7 +740,8 @@ func trigger_event(event_number):
 		318:
 			pass
 		319:
-			pass
+			spawn_enemy(2, 1)
+			spawn_enemy(2, 3)
 		320:
 			pass
 		321:
@@ -1226,279 +1228,3 @@ func trigger_event(event_number):
 			pass
 		562:
 			win_game()
-		563:
-			pass
-		564:
-			pass
-		565:
-			pass
-		566:
-			pass
-		567:
-			pass
-		568:
-			pass
-		569:
-			pass
-		570:
-			pass
-		571:
-			pass
-		572:
-			pass
-		573:
-			pass
-		574:
-			pass
-		575:
-			pass
-		576:
-			pass
-		577:
-			pass
-		578:
-			pass
-		579:
-			pass
-		580:
-			pass
-		581:
-			pass
-		582:
-			pass
-		583:
-			pass
-		584:
-			pass
-		585:
-			pass
-		586:
-			pass
-		587:
-			pass
-		588:
-			pass
-		589:
-			pass
-		590:
-			pass
-		591:
-			pass
-		592:
-			pass
-		593:
-			pass
-		594:
-			pass
-		595:
-			pass
-		596:
-			pass
-		597:
-			pass
-		598:
-			pass
-		599:
-			pass
-		600:
-			pass
-		601:
-			pass
-		602:
-			pass
-		603:
-			pass
-		604:
-			pass
-		605:
-			pass
-		606:
-			pass
-		607:
-			pass
-		608:
-			pass
-		609:
-			pass
-		610:
-			pass
-		611:
-			pass
-		612:
-			pass
-		613:
-			pass
-		614:
-			pass
-		615:
-			pass
-		616:
-			pass
-		617:
-			pass
-		618:
-			pass
-		619:
-			pass
-		620:
-			pass
-		621:
-			pass
-		622:
-			pass
-		623:
-			pass
-		624:
-			pass
-		625:
-			pass
-		626:
-			pass
-		627:
-			pass
-		628:
-			pass
-		629:
-			pass
-		630:
-			pass
-		631:
-			pass
-		632:
-			pass
-		633:
-			pass
-		634:
-			pass
-		635:
-			pass
-		636:
-			pass
-		637:
-			pass
-		638:
-			pass
-		639:
-			pass
-		640:
-			pass
-		641:
-			pass
-		642:
-			pass
-		643:
-			pass
-		644:
-			pass
-		645:
-			pass
-		646:
-			pass
-		647:
-			pass
-		648:
-			pass
-		649:
-			pass
-		650:
-			pass
-		651:
-			pass
-		652:
-			pass
-		653:
-			pass
-		654:
-			pass
-		655:
-			pass
-		656:
-			pass
-		657:
-			pass
-		658:
-			pass
-		659:
-			pass
-		660:
-			pass
-		661:
-			pass
-		662:
-			pass
-		663:
-			pass
-		664:
-			pass
-		665:
-			pass
-		666:
-			pass
-		667:
-			pass
-		668:
-			pass
-		669:
-			pass
-		670:
-			pass
-		671:
-			pass
-		672:
-			pass
-		673:
-			pass
-		674:
-			pass
-		675:
-			pass
-		676:
-			pass
-		677:
-			pass
-		678:
-			pass
-		679:
-			pass
-		680:
-			pass
-		681:
-			pass
-		682:
-			pass
-		683:
-			pass
-		684:
-			pass
-		685:
-			pass
-		686:
-			pass
-		687:
-			pass
-		688:
-			pass
-		689:
-			pass
-		690:
-			pass
-		691:
-			pass
-		692:
-			pass
-		693:
-			pass
-		694:
-			pass
-		695:
-			pass
-		696:
-			pass
-		697:
-			pass
-		698:
-			pass
-		699:
-			pass
-		700:
-			pass
