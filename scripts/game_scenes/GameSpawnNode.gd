@@ -52,6 +52,8 @@ func summon_thinker():
 
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
+	print("Event number is now: " + str(event_number))
+	
 	match(event_number):
 		0:
 			pass
