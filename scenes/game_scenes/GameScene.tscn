@@ -16,7 +16,7 @@
 [ext_resource path="res://scenes/enemy_bosses/ModularSwallowerScene.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/enemy_bosses/ModularThinkerScene.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/environment/WorldEnvironment.tscn" type="PackedScene" id=16]
-[ext_resource path="res://3d/export/player_shield.gltf" type="PackedScene" id=17]
+[ext_resource path="res://3d/export/player_shield.gltf" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Head Bob"
@@ -155,7 +155,7 @@ shape = SubResource( 9 )
 [node name="player_spaceship" parent="GameWindow/PlayerShip" instance=ExtResource( 10 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 1.07286e-07, 0, 3.60012e-05 )
 
-[node name="player_shield" parent="GameWindow/PlayerShip/player_spaceship" instance=ExtResource( 17 )]
+[node name="player_shield" parent="GameWindow/PlayerShip/player_spaceship" instance=ExtResource( 18 )]
 transform = Transform( -8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, -1.33333, 0, 1.16564e-07 )
 visible = false
 
