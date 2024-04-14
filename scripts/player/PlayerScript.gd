@@ -19,6 +19,7 @@ onready var player_spaceship = $PlayerShip/player_spaceship
 
 onready var player_shield = $PlayerShip/player_spaceship/player_shield
 
+onready var player_static_body = $PlayerShip/PlayerStaticBody
 
 onready var reticle = $Reticle
 onready var player_ship = $PlayerShip
@@ -39,9 +40,6 @@ onready var current_score_label = $UI/PlayerUI/CurrentScoreLabel
 onready var health_left_label = $UI/PlayerUI/HealthLeftLabel
 onready var rockets_left_label = $UI/PlayerUI/RocketsLeftLabel
 onready var shields_left_label = $UI/PlayerUI/ShieldsLeftLabel
-
-
-
 
 
 var is_game_over = false
@@ -123,7 +121,7 @@ func _process(delta):
 	manage_shield(delta)
 	
 	# Keep updating position
-	global_var.current_global_player_position = player_ship.global_transform.origin
+	global_var.current_global_player_position = player_static_body.global_transform.origin
 	
 	if !is_game_over && !is_game_won:
 		global_var.current_score += 5 * delta
