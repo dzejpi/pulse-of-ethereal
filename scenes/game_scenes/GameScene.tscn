@@ -107,7 +107,7 @@ script = ExtResource( 7 )
 transform = Transform( 3, 0, 1.04907e-06, 0, 3, 0, -1.04907e-06, 0, 3, 0, -150, -100 )
 
 [node name="ModularThinker" parent="GameWindow/EnemyBosses" instance=ExtResource( 15 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -120, -29 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -3.0598e-07, -120, -36 )
 
 [node name="EnemySpawner" type="Spatial" parent="GameWindow"]
 
@@ -185,6 +185,7 @@ visible = false
 [node name="PlayerUI" type="Node2D" parent="GameWindow/UI"]
 
 [node name="Tooltip" parent="GameWindow/UI/PlayerUI" instance=ExtResource( 3 )]
+visible = false
 
 [node name="CurrentScoreLabel" type="Label" parent="GameWindow/UI/PlayerUI"]
 margin_top = 8.0

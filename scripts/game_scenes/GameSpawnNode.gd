@@ -6,6 +6,8 @@ onready var enemy_spawner_ship = $"../../GameWindow/EnemySpawner/enemy_spawner_s
 onready var powerup_spawner = $"../../GameWindow/PowerUpSpawner"
 onready var modular_swallower = $"../../GameWindow/EnemyBosses/ModularSwallower"
 onready var modular_thinker = $"../../GameWindow/EnemyBosses/ModularThinker"
+onready var tooltip = $"../../GameWindow/UI/PlayerUI/Tooltip"
+
 
 
 func _ready():
@@ -62,6 +64,10 @@ func win_game():
 	game_window.is_game_won = true
 
 
+func show_tooltip(tooltip_text, tooltip_countdown):
+	tooltip.show_tooltip(tooltip_text, tooltip_countdown)
+
+
 # Lord forgive me for what I'm about to do
 func trigger_event(event_number):
 	if global_var.debug:
@@ -78,7 +84,7 @@ func trigger_event(event_number):
 		1:
 			pass
 		2:
-			pass
+			show_tooltip("WSAD to move", 2)
 		3:
 			pass
 		4:
@@ -90,7 +96,7 @@ func trigger_event(event_number):
 		7:
 			pass
 		8:
-			pass
+			show_tooltip("[Space/LB] Machine gun", 2)
 		9:
 			pass
 		10:
@@ -102,11 +108,11 @@ func trigger_event(event_number):
 		13:
 			pass
 		14:
-			pass
+			show_tooltip("[Ctrl/RB] Rocket", 2)
 		15:
 			pass
 		16:
-			ready_enemy_spawner()
+			pass
 		17:
 			pass
 		18:
@@ -114,12 +120,11 @@ func trigger_event(event_number):
 		19:
 			pass
 		20:
-			
-			pass
+			show_tooltip("[Alt/MB] Shield", 2)
 		21:
 			pass
 		22:
-			pass
+			ready_enemy_spawner()
 		23:
 			pass
 		24:
@@ -381,7 +386,7 @@ func trigger_event(event_number):
 		151:
 			pass
 		152:
-			pass
+			show_tooltip("! INCOMING !", 4)
 		153:
 			pass
 		154:
@@ -614,7 +619,8 @@ func trigger_event(event_number):
 		255:
 			pass
 		256:
-			dismiss_swallower()
+			pass
+			#dismiss_swallower()
 		257:
 			pass
 		258:
@@ -795,6 +801,7 @@ func trigger_event(event_number):
 			spawn_enemy(2, 1)
 		345:
 			spawn_enemy(2, 2)
+			show_tooltip("! INCOMING !", 4)
 		346:
 			spawn_enemy(2, 3)
 		347:
@@ -1043,7 +1050,8 @@ func trigger_event(event_number):
 		463:
 			pass
 		464:
-			dismiss_thinker()
+			pass
+			#dismiss_thinker()
 		465:
 			pass
 		466:

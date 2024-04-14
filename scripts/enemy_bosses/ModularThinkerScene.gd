@@ -17,7 +17,7 @@ var enemy_score = 10000
 var is_hidden = true
 
 var shown_y = 0
-var hidden_y = -180
+var hidden_y = -120
 
 
 func _process(delta):
